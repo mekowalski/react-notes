@@ -1,0 +1,18 @@
+-Declarative programming allows focus on what the application should look like, opposed to being concerned
+with manually updating DOM
+-Tell React what the result should be and it'll do heavy lifting for the application
+
+IMPERATIVE:
+Process of hiring someone to paint the house
+-Hire the person
+-Tell them to open the paint can
+-Dip the brush in the paint can
+-Move the brush in a stroking fashion on the house walls
+*Telling painter EXACTLY what to do, micromanage
+
+DECLARATIVE:
+Process of hiring someone to paint the house
+-Hire the person
+-Tell them to paint the house walls this color
+-They get it done
+*No other explanation because the painter knows EXACTLY what to do
