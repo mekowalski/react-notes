@@ -1,0 +1,8 @@
+-Virtual DOM is a programmatic representation of the document we see in the browser
+-Virtual DOM is a technique used by front-end libraries and frameworks, most notably React
+-Build virtual representation of what the document should look like
+-Best to touch and change the DOM as little as possible and do it with surgical precision
+-Virtual DOM does most of the work for the code, don't need to write much imperative code to update the
+application
+-VDOM works very well and is used in many high-profile libraries and frameworks
+-It is just a clever work around to the DOM being slow and the best bet for now
