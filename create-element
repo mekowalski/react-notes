@@ -1,2 +1,97 @@
 Set up React with `npm install -g create-react-app webpack`
-Run mini-React with `npm install && npm start`
+Run mini-React application with `npm install && npm start`
+(Browser displays empty white screen)
+
+-Create basic page title with `React.createElement()` in index.js file
+-First import React library => `import React from 'react';`
+-Then create first element
+=> `const title = React.createElement('h1', {}, 'My First React Code');`
+-first argument is type of element to create 'h1'
+-second argument is an object containing properties, 'props', {}
+-last argument is children of the component, 'My First React Code'
+
+-Need to render element to the page => `import ReactDOM from 'react-dom';`
+-Render to React element from earlier
+=>`ReactDOM.render(
+    title,
+    document.getElementById('global')
+    );`
+
+
+UPDATED JS FILE
+`
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const title = React.createElement('h1', {}, 'My First React COde');
+
+ReactDOM.render(
+  title,
+  document.getElementById('global')
+);
+`
+
+-Since Webpack is used, the page reloads automatically
+
+
+PARENT AND CHILDREN ELEMENTS
+To add multiple children, use an array
+-Add and element as a child
+=> `const container = React.createElement('div', {}, title);`
+
+-Also add a 'sibling' element
+=> `const container = React.createElement('div', {}, [title, paragraph]);`
+
+Can also nest children as much as wanted
+`
+const list =
+  React.createElement('div', {},
+    React.createElement('h1', {}, 'My favorite ice cream flavors'),
+    React.createElement('ul', {},
+      [
+        React.createElement('li', {}, 'Chocolate'),
+        React.createElement('li', {}, 'Vanilla'),
+        React.createElement('li', {}, 'Banana')
+      ]
+    )
+  );
+  `
+
+ADDING ATTRIBUTES
+Add classes with 'className' because 'class' is a reserved keyword in JavaScript
+`
+const list =
+  React.createElement('div', {},
+    React.createElement('h1', {}, 'My favorite ice cream flavors'),
+    React.createElement('ul', {},
+      [
+        React.createElement('li', { className: 'brown' }, 'Chocolate'),
+        React.createElement('li', { className: 'white' }, 'Vanilla'),
+        React.createElement('li', { className: 'yellow' }, 'Banana')
+      ]
+    )
+  );
+  `
+
+FINAL JS FILE
+`
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const list =
+  React.createElement('div', {},
+    React.createElement('h1', {}, 'My favorite ice cream flavors'),
+    React.createElement('ul', {},
+      [
+        React.createElement('li', { className: 'brown' }, 'Chocolate'),
+        React.createElement('li', { className: 'white' }, 'Vanilla'),
+        React.createElement('li', { className: 'yellow' }, 'Banana')
+      ]
+    )
+  );
+
+ReactDOM.render(
+  list,
+  document.getElementById('global')
+);
+`
