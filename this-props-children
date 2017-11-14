@@ -1,0 +1,85 @@
+A React component may have one, many or no children
+-VideoPlayer has 2 children
+  VideoHeader
+    One Chile:h1
+  VideoControls
+    No Child(ren)
+
+<VideoPlayer>
+  <VideoHeader>
+    <h1 className="video-title">The Simpsons</h1>
+  </VideoHeader>
+  <VideoControls />
+</VideoPlayer>
+
+-Use children to compose interface
+Example:
+<Panel> component allows addition of content, a panel may look like this:
+<Panel title="Browse for movies">
+  <div>Movie stuff...</div>
+  <div>Movie stuff...</div>
+  <div>Movie stuff...</div>
+  <div>Movie stuff...</div>
+</Panel>
+*adding content inside <Panel> tags*
+
+-Access the content through `this.props.children`, a prop passed to components automatically
+export default class Panel extends React.Components {
+  render() {
+    return (
+      <div className='panel'>
+        <div className='panel-header'>{this.props.title}</div>
+        <div className='panel-body'>{this.props.children}</div>
+      </div>
+    )
+  }
+}
+
+
+REACT.CHILDREN
+-this.props.children may have: one, multiple or no elements
+-respectively: a single child node, an array of child nodes or undefined
+-React provides a clean API to handle looping of children, if one child or none, there won't be a
+fuss thrown, nicely handles in the background
+
+-Movie component nested inside a MovieBrowser component
+<MovieBrowser>
+  <Movie title="Mad Max: Fury Road" />
+  <Movie title="Harry Potter & The Goblet Of Fire" />
+</MovieBrowser>
+
+-Need to pass down an extra prop to children, to be played or not
+export default class MovieBrowser extends React.Component {
+  render() {
+    const currentPlayingTitle = 'Mad Max: Fury Road'
+
+    return (
+      <div className="movie-browser">
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
+-Add isPlaying prop to the children of MovieBrowser
+export default class MovieBrowser extends React.Component {
+  render() {
+    const currentPlayingTitle = 'Mad Max: Fury Road'
+    const childrenWithExtraProp = React.Children.map(this.props.children, child => {
+      return React.cloneElement(child, {
+        isPlaying: child.props.title === currentPlayingTitle
+      })
+    })
+
+    return (
+      <div className="movie-browser">
+        {childrenWithExtraProp}
+      </div>
+    )
+  }
+}
+React.Children.map takes 2 parameters:
+  first is children themselves
+  second is a function that transforms value of the child
+-Adding extra prop with React.cloneElement
+-Additional props get merged with the child's existing props, overwriting any props with same key
