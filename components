@@ -1,0 +1,60 @@
+A React application consists of several React components combined
+Unlike simple HTML elements, React components are smarter and bigger
+
+React.createClass() (this is deprecated syntax to not be used and will no longer work)
+-Takes in one argument of object to specify your component
+-Only requirement is that your object has a 'render()' method, React needs to know what it should show
+on screen
+-render() needs to return a single child(may have children of its own)
+-Components are always capitalized
+
+const Button = React.createClass({
+  render() {
+    return React.createElements('button', {}, 'Click me!')
+  }
+})
+
+*Render with some children*
+const ShoppingList = React.crateClass({
+  render() {
+    return React.createElement('ul', {}, [
+      React.createElement('li', {}, 'Bananas'),
+      React.createElement('li', {}, 'Vanilla ice cream'),
+      React.createElement('li', {}, 'Chocolate')
+    ])
+  }
+})
+
+
+ES6 SYNTAX
+React adopted newer syntax that is more succinct
+Extend base React.Component class and adding any methods for component specification
+class YourComponent extends React.component {
+  render() {
+    //Reach Elements
+  }
+}
+
+class Button extends React.Component {
+  render() {
+    return React.createElement('button', {}, 'Click me!')
+  }
+}
+
+class ShoppingList extends React.Component {
+  render() {
+    return React.createElement('ul', {}, [
+      React.createElement('li', {}, 'Bananas'),
+      React.createElement('li', {}, 'Vanilla ice cream'),
+      React.createElement('li', {}, 'Chocolate'),
+    ])
+  }
+}
+
+
+NESTING COMPONENTS
+Instead of passing in a string, can pass in a React component
+const nestedButtons = React.createElement('div', {}. [
+  React.createElement(Button)
+  React.createElement(Button)
+])
