@@ -1,0 +1,83 @@
+PropTypes are a way to enforce components receiving the right props in the right form
+Catches errors when the wrong thing is passed into a component and warns you about it
+Helps with code modularity and resuse, helpful for working with multiple developers and big codebases
+
+
+USING PROPTYPES
+-What data/props are needed
+-What are the options
+-Are some of them required
+
+*Modern ice cream store where orders are done via computer and shown in browser via React*
+*<Order/> component*
+class Order extends React.Component {
+  render() {
+    return (
+      <div className="order">
+        <ul>
+          <li>{this.props.cone ? 'Cone' : 'Cup'}</li>
+          <li>{this.props.size}</li>
+          <li>{this.props.scoops.length} scoops: {this.props.scoops.join(', ')}</li>
+          <li>Ordered by {this.props.orderInfo.customerName} at {this.props.orderInfo.orderedAt}.</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+Order.defaultProps = {
+  cone: true,
+  size: 'regular',
+  scoops: ['chocolate', 'vanilla', 'strawberry']
+  orderInfo: {'customerName', 'orderedAt'}
+}
+
+-Next add the PropTypes node package to `node_nodules` folder to access `PropTypes`:
+`npm install prop-types`
+
+-Then begin adding PropTypes to validate all props being passed in
+-Set propTypes property(an object) on the `Order` class and import PropTypes at top of file
+import React from 'react';
+import PropTypes from 'prop-types';
+
+class Order extends React.Component {
+
+  render() {
+    // ...
+  }
+}
+
+Order.defaultProps = {
+  cone: true,
+  size: 'regular'
+};
+
+Order.propTypes = {};
+
+-First PropType to the `cone`
+-Second PropType to the `size`
+-Third PropType to the `scoops array`
+-Last PropType to the `orderInfo`
+
+Order.propType = {
+  cone: PropTypes.bool,
+  size: PropTypes.string,
+  scoops: PropTypes.arrayOf(PropTypes.string).isRequired
+  //`isRequired` makes sure the scoops prop is provided when rendering & expect array of strings
+  orderInfo: PropTypes.object.isRequired
+}
+
+
+DEFINING 'SHAPE' FOR OBJECT PROTOTYPES
+-orderInfo prop is supposed to be an object with properties
+-With `React.PropTypes.shape` the component can expect the prop to have certain shape
+-Can further validate component's props to be even more specific and to to be doubly sure that
+we're getting the right data
+
+Order.propTypes = {
+  //Previous PropTypes
+  orderInfo: PropTypes.shape({
+    customerName: PropTypes.string.isRequired,
+    orderedAt: PropTypes.number.isRequired // We're using UNIX timestamps here
+  }).isRequired
+};
