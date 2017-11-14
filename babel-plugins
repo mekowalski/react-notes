@@ -1,0 +1,31 @@
+Babel transpile your ES2015 and newer code to ES5, previous JS version that all browsers know & understand
+Ensures every browser can run the code and give possibility of writing more modern code
+Babel does nothing to the code, it only starts transforming code once you tell which plugins to use
+
+PLUGINS
+-Small composable dependencies that transform parts of code
+-Allows tweaking of configuration to what we deem necessary
+
+PLUGINS AND PRESETS
+-Install plugins and presets by using `npm` then a file called `.babelrc` in root of project
+-When Babel compiles the code, it will use presets and plugins defined below
+{
+  "presets": ["es2015", "react"],
+  "plugins": ["an-example-plugin", "another-example-plugin"]
+}
+
+OBJECT REST AND SPREAD
+-With `babel-plugin-transform-object-rest-spread` can use spread operators for objects
+// Rest properties
+let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+console.log(x); // 1
+console.log(y); // 2
+console.log(z); // { a: 3, b: 4 }
+
+// Spread properties
+let n = { x, y, ...z };
+console.log(n); // { x: 1, y: 2, a: 3, b: 4 }
+
+CLASS PROPERTIES
+-With `babel-plugin-transform-class-properties` can use properties to declare methods, alleviating the need
+to use `.bind()` in constructor
