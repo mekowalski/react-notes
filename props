@@ -1,0 +1,80 @@
+Props allow the passing of values to components, they can be anything: string, array, functions, etc
+It also allows the components to be more dynamic and reusable
+
+A MovieCard component with Title, Poster image and other PROPerties
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class MovieCard extends React.Component {
+  render() {
+    return (
+      <div className="movie-card">
+        <img src="http://image.tmdb.org/t/p/w342/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="Mad Max: Fury Road" />
+        <h2>Mad Max: Fury Road</h2>
+        <small>Genres: Action, Adventure, Science Fiction, Thriller</small>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <MovieCard />,
+  document.getElementById('root')
+);
+
+-Instead of writing another component to render another movie card for another movie, just pass in props
+to a component
+-To pass in props to a component, add them as attributes when rendering them:
+<MyComponent propName = {propValue}/> //value of a prop passed through {}
+
+Update ReactDOM.render() call to include data for Mad Max movie(add line breaks for readability):
+ReactDOM.render(
+  <MovieCard
+    title="Mad Max: Fury Road"
+    poster="http://image.tmdb.org/t/p/w342/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+    genres={['Action', 'Adventure', 'Science Fiction', 'Thriller']}
+  />,
+  document.getElementById('root')
+);
+
+
+ACCESSING PROPS
+-Change hardcoded data in the `render()` method to use props we pass in instead
+class MovieCard extends React.Component {
+  render() {
+    return (
+      <div className="movie-card">
+        <img
+          src={this.props.poster} //props in component accessed with `this.props`
+          alt={this.props.title}
+        />
+        <h2>{this.props.title}</h2>
+        <small>Genres: {this.props.genres.join(', ')}</small>
+      </div>
+    );
+  }
+}
+
+
+DEFAULT VALUES FOR PROPS
+-If a prop is not provided, component can be instructed to use a default value instead
+-Helps us take care of not worrying about a forgotten prop, component takes care of it for us
+class MovieCard extends React.Component {
+  render() {
+    // ... The render stuff from before
+  }
+}
+
+MovieCard.defaultProps = {
+  poster: 'http://i.imgur.com/bJw8ndW.png'
+};
+
+const jurassicWorldGenres = ['Action', 'Adventure', 'Science Fiction', 'Thriller'];
+
+ReactDOM.render(
+  <MovieCard
+    title="Jurassic World"
+    genres={jurassicWorldGenres}
+  />,
+  document.getElementById('root')
+);
