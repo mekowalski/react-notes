@@ -1,0 +1,116 @@
+State in React is data that is mutated in a component, component can't change its own prop but can
+change its state
+-State handles:
+  Interactivity, changing data when a button is clicked
+  Fetching remote data, state gives a way of updating component once data arrives
+  Reacting to passing of time, interval or timeout
+
+Props and state are used as input for render() to determine output but not the same thing
+-Will this data ever change?
+  No: it's a prop
+  Yes: it's a state
+
+
+SETTING INITIAL STATE
+-Setting initial state is similar to props(since data won't change) but still able to change state
+whenever necessary
+
+EXAMPLE:
+Scenario of a component with a toggle button of on and off state
+(props won't work since props can't change, so use state here)
+Setting initial state is done in the constructor of React Component
+// src/components/ToggleButton.js
+import React from 'react';
+
+class ToggleButton extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      isEnabled: false
+    }
+  }
+
+  render() {
+    return (
+      <button className="toggle-button">
+        I am toggled {this.state.isEnabled ? 'on' : 'off'}
+      </button>
+    )
+  }
+}
+
+export default ToggleButton;
+
+*and import in the src/index.js file
+// src/index.js
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import ToggleButton from './components/ToggleButton'
+
+ReactDOM.render(
+  <ToggleButton />,
+  document.getElementById('root')
+);
+*shows button with 'I am toggled off' in browser*
+
+
+MINIMAL REPRESENTATION OF STATE
+-Important to keep state as small as possible, strive for minimal amount of data in state
+
+EXAMPLE:
+Scenario with and <Address/> Component with 2 props, street and city
+// src/components/Address.js
+import React from 'react'
+
+class Address extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      fullAddress: `${props.street}, ${props.city}`
+    }
+  }
+
+  render() {
+    return (
+      <div className="address">
+        {this.state.fullAddress}
+      </div>
+    )
+  }
+}
+
+export default Address
+
+*and import in the src/index.js file*
+import React from 'react'
+import ReactDOM from 'react-dom'
+// import ToggleButton from './components/ToggleButton'
+
+ReactDOM.render(
+  // <ToggleButton/>,
+  <Address
+  street='Santa Monica Blvd.'
+  city='Santa Monica'
+  />,
+  document.getElementById('root')
+)
+*shows street and city in browser*
+
+-Storing computed values should be avoided such as fullAddress since props are just used to
+conpute the full address.
+-Instead, use component's props directly
+class Address extends React.Component {
+  render() {
+    return (
+      <div className='address'>
+      {this.props.street}, {this.props.city}
+      </div>
+    )
+  }
+}
+
+*Component state is very powerful but should be used sparingly as possible
+Hard to manage and can be easy to lose sight of*
