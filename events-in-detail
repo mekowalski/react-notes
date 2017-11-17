@@ -1,0 +1,22 @@
+SyntheticEvent events has all usual properties and methods: type, target, mouse coords etc
+Adding event handlers to component and use event's data:
+export default class Clicker extends React.Component {
+  handleClick = (event) => {console.log(event.type)} //prints 'click'
+  render() {
+    return (
+      <button onClick={this.handleClick}>Click me!</button>
+    )
+  }
+}
+*to target event use event.target, to prevent default action use event.preventDeafult()*
+
+
+EVENT POOLING
+-SyntheticEvent is React's own implementation that allows advantage of several techniques to
+increase performance of applications
+-Event pooling sends event data(object) to the callback after an event fires, the object is then
+cleaned up for later use
+-Can't access event data in an asynchronous manner by saving it in the state
+-If accessing data is necessary then either:
+  store the data in a variable 'const target = event.target'
+  make the event persistent with 'event.persist()'
