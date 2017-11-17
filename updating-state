@@ -1,0 +1,35 @@
+Real power is in updating state
+Use this.setState(), available to all React components instead of directly modifying with this.state
+
+*code along in react-updating-state*
+*refer to scr/components/ClickityClick.js*
+*refer to src/index.js*
+
+-To update state, use this.setState()
+// src/components/ClickityClick.js
+...
+//after defining initial state
+
+handleClick = () => {
+  this.setState({
+    hasBeenClicked: true
+  })
+}
+
+...
+
+
+-Object will get merged with the current state when using this.setState() and passing in an object,
+once state updates, component re-renders automatically
+-State only merges on the first level
+
+
+SETTING STATE IS NOT SYNCHRONOUS
+-It may seem that setting state is synchronous because it updates right away but it is NOT synchronous
+-State changes happen asynchronously although they appear to instantly update
+
+
+STATE CHANGES VS PROPS CHANGES
+-State and Props changes will both trigger re-render in React component
+-State changes though, will only happen internally due to components changing their own state
+-Props changes occur eternally due to changes in the prop values being passed in
