@@ -1,0 +1,28 @@
+Forms in React are straight forward and similar to regular HTML elements with some differences
+For elements include: <input>, <textarea>, <select>, <form>, not always specifically <input>
+Use specific prop to control value of inputs:
+  -<input> & <textarea> use 'value'
+  -<input type='checkbox'> & <input type='radio'> use 'checked'
+  -<option> use 'selected'
+
+Pass in 'onChange' to listen for changes to value of input
+
+
+CONTROLLED VS UNCONTROLLED COMPONENTS
+-React provides 2 methods of uncontrolled and controlled components to set and get values
+-Check for 'value' or 'defaultValue' to check if component is controlled or uncontrolled:
+  -value prop is controlled by React
+  -no value prop means uncontrolled component
+  -value and defaltValue are mutually exclusive, one or the other but cannot be both
+
+
+UNCONTROLLED COMPONENT
+-Uncontrolled component's values are kept in the DOM itself, the form element has its own internal
+state
+-Use defaultValue prop to set initial value for element, can't use 'value' prop
+-Not using state to explicitly store its value, component never update its value
+
+
+CONTROLLED COMPONENT
+-Controlled components explicitly set value of a component and update value in response to changes
+*code along with react-forms-v*
