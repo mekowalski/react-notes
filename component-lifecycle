@@ -1,0 +1,44 @@
+React components have 2 sets of properties: state and props
+React framework was designed to enable creation of complex and highly reactive UI's
+The component lifecycles are divided into creation, updating and deletion
+EXAMPLE:
+  -open new chat window is creation
+  -interacting and sending messages with chat window is updating
+  -closing the chat window is deletion
+
+
+LIFECYCLE HOOKS AND RENDERING
+-Lifecycle hooks or methods are opportunities for changing how a component reacts to various changes
+in the app
+-A React component must be valid with 'render()'
+-Lifecycle methods are called at different times of the component's lifecycle
+
+
+MOUNTING
+-When a component is initially created, it figures out its initial state and renders its initial
+HTML onto the page
+-componentWillMount: is called just before 'render()' used to change initial state if needed
+-componentDid Mount: is called just after 'render()' used to set up long-running processes
+
+
+UPDATING
+-Choose from many lifecycle hooks to decide how React component will respond to changes
+-componentWillReceiveProps: used to change components state based on new props passed in
+-shouldComponentUpdate: invoked before component is re-rendered, compare old and new props/state
+and prevent unnecessary re-renders
+-componentWillUpdate called after 'shouldComponentUpdate' is finished and before new component gets
+rendered, use to update integrations with 3rd party libraries
+-componentDidUpdate: called after new component rendered, access to previous and current props/state,
+and update 3rd party libraries if needed due to the re-render
+
+
+UNMOUNTING
+-componentWillUnmount: deletes and clears component from the page and is called right before
+component deletes
+
+
+BIG OAK TREE
+-Tree is a parent component
+-Each branch is a child component
+-The leaves of each branch are more children
+-Leaves go through lifecycles of creation, changing colors based on seasons and finally falling
