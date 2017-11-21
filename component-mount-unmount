@@ -1,0 +1,40 @@
+Mounting is to creation/setup and unmounting is to deletion/cleanup
+
+
+MOUNTING
+Mounting gives access to 2 lifecycle methods: componentWillMount and componentDidMount
+
+COMPONENTWILLMOUNT
+-Called once immediately before the component is rendered, performs any state changes needed before
+initial render
+EXAMPLE: keep the time and date when component was created, set up in 'componentWillMount'
+  componentWillMount() {
+    this.setStae({startDateTime: new Date(Date.now())})
+  }
+
+
+COMPONENTDIDMOUNT
+-Also only called once, immediately after render() method has taken place
+-Used to perform any DOM manipulation of data-fetching that the component may need
+EXAMPLE: a weather app that fetches data on current weather and displays it to user, update data
+every 15 seconds without page refresh
+  componentDidMount() {
+    this.interval = setInterval(this.fetchWeather, 15000)
+  }
+
+
+UNMOUNTING
+Only one lifecycle method to delete or cleanup: componentWillUnmount
+
+COMPONENTWILLUNMOUNT
+-Last function to be called immediately before the component is removed from the DOM
+-Cleaup for any DOM-elements or timers created in 'componentWillMount'
+EXAMPLE: (weather app fetching data) clear the interval so the weather API would no longer get
+called every 15 seconds
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+
+Mounting and unmounting steps are important for ensuring React components get set up and initialized
+nicely
