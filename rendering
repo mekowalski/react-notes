@@ -1,0 +1,57 @@
+Order of lifecycle methods goes:
+  1. componentWillReceiveProps(nextProps)
+  2. shouldComponentUpdate(nextProps, nextState)
+  3. componentWillUpdate(nextProps, nextState)
+  4. render() *access props/state via this.props/this.state
+  5. componentDidUpdate(prevProps, prevState) *last time previous props/state available as they're
+     passed into the function
+
+LIFECYCLE 1
+-Called when component receives new props from parent, doesn't mean the props have changed
+-Can be used to record trend between current and previous props
+EXAMPLE: theater with audience movement, coming in (increasing), going out (decreasing)
+componentWillRecieveProps(nextProps) {
+  this.setState({
+    audienceIncrease: nextProps.numAudience > this.props.numAudience,
+    audienceDecrease: nextProps.numAudience < this.props.numAudience
+  }
+}
+
+
+LIFECYCLE 2
+-This cycle is odd one out because it doesn't operate on state but has a Boolean return value
+to determine if component needs update or not
+-Helpful to prevent unnecessary re-renders
+EXAMPLE:
+shouldComponentUpdate(nextProps, nextState) {
+  return (this.props.myImportantValue !== nextProps.myImportantValue)
+}
+-props and nextProps are both JavaScript objects, this comparison will always return true
+*continued example of theater play with new script(update)
+shouldComponentUpdate(nextProps, nextState) {
+  return (this.props.scriptVersion !== nextProps..scriptVersion)
+}
+
+
+LIFECYCLE 3
+-Called immediately after the check in of Lifecycle 2 has passed
+-No state changes allowed and solely used for preparing for upcoming update, not trigger one
+EXAMPLE: theater needs different background, new costumes or more upbeat music, etc
+
+
+LIFECYCLE 4
+-render() is most familiar method for React developers
+-The next props and state are available via this.props/state and gets rendered into the DOM
+EXAMPLE: the play is finally carried out, not changes are made, takes director-approved script and
+makes it happen for show time
+
+
+LIFECYCLE 5
+-This method isn't used often but looks back the the update that was just made
+-Common use case for third party library
+EXAMPLE: a critic looking back at the play just performed and give a different review
+componentDidUpdate(prevProps, prevState) {
+  if (prevProps.height !== this.props.height) {
+    someChartLibrary.updateHeight(this.props.height)
+  }
+}

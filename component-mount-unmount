@@ -9,7 +9,7 @@ COMPONENTWILLMOUNT
 initial render
 EXAMPLE: keep the time and date when component was created, set up in 'componentWillMount'
   componentWillMount() {
-    this.setStae({startDateTime: new Date(Date.now())})
+    this.setState({startDateTime: new Date(Date.now())})
   }
 
 
