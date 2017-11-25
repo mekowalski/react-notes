@@ -1,0 +1,88 @@
+Container components and presentational components go together, part of the same design pattern
+-Container components are concerned with how things work
+-they rarely have HTML, aside from wrapping <div>
+-they are often stateful
+-responsible for providing data and behavior to their children(presentational components)
+
+EXAMPLE: BookList widget allows book lovers to communicate about their favorite reads
+class BookList extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      books: []
+    }
+  }
+
+  componentWillMount() {
+    fetch('/api/current_user/book_list')
+      .then(resp => resp.json())
+      .then((books => this.setState({books})))
+  }
+
+  render() {
+    return (
+      <div className='book-list'>
+        {this.state.books.map(book => {
+          <div className='book'>
+            <img src={book.img_url}/>
+            <h3>{book.title}</h3>
+          </div>
+        })}
+      </div>
+    )
+  }
+}
+DISADVANTAGES OF THIS IMPLEMENTATION
+-assumes book list being displayed is related to current user
+-assumes call to api returns JSON object containing list of book objects with certain properties
+-assumes book list will always be rendered with same markup returned by render function
+
+
+SEPARATING CONCERNS WITH CONTAINER COMPONENT
+-Compose UI out of multiple React components to isolate UI layer into presentational components
+-Then wrap presentational component in container component that handles state and other logic
+NEW IMPLEMENTATION
+const Book = ({ title, img_url }) => {
+  return (
+    <div className="book">
+      <img src={img_url} />
+      <h3>{title}</h3>
+    </div>
+  )
+}
+
+//stateless & contains presentation layer, incredibly stable & concise
+const BookList = ({books}) => (
+  <div className="book-list">
+    {books.map(book => <Book title="book.title" img_url="book.image_url" />)}
+  </div>
+)
+
+//all state is contained here, logic is same but has been uncoupled from presentation layer
+class BookListContainer extends Component {
+  constructor() {
+    super()
+    this.state = {
+      books: []
+    }
+  }
+
+  componentWillMount() {
+    fetch('/api/current_user/book_list')
+      .then(response => response.json())
+      .then((books => this.setState({books}))
+  }
+
+  render() {
+    return <BookList books={this.state.books} />
+  }
+}
+
+//because a prop (book) is taken, can add 'propTypes' to receive information warning about
+//structure of data returned by API change
+BookList.propTypes = {
+  books: PropTypes.shape({
+    img_url: PropTypes.string.isRequired,
+    title: PropsTypes.string.isRequired
+  });
+}
