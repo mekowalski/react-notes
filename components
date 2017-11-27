@@ -15,7 +15,7 @@ const Button = React.createClass({
 })
 
 *Render with some children*
-const ShoppingList = React.crateClass({
+const ShoppingList = React.createClass({
   render() {
     return React.createElement('ul', {}, [
       React.createElement('li', {}, 'Bananas'),
@@ -31,7 +31,7 @@ React adopted newer syntax that is more succinct
 Extend base React.Component class and adding any methods for component specification
 class YourComponent extends React.component {
   render() {
-    //Reach Elements
+    //React Elements
   }
 }
 
