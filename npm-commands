@@ -9,3 +9,11 @@ A package and be:
   7. <git remote url> resolving to (1)
 
 By default, 'npm install' installs all modules listed as dependencies in 'package.json'
+
+
+NPM START: runs arbitrary command specified in the package's 'start' property of its 'scripts'
+object
+-If no 'start' is specified in the 'scripts' object then it will run 'node server.js'
+
+
+NPM TEST: runs package's 'test' script if one is provided
