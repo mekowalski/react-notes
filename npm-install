@@ -1,0 +1,11 @@
+NPM INSTALL: installs package and any packages it depends on
+A package and be:
+  1. folder containing program describes by 'package.json' file
+  2. gzipped tarball containing(1)
+  3. url that resolves to (2)
+  4. <name>@<version> that is published on registry with (3)
+  5. <name>@<tag> that points to (4)
+  6. <name> that has 'latest' tag satisfying (5)
+  7. <git remote url> resolving to (1)
+
+By default, 'npm install' installs all modules listed as dependencies in 'package.json'
