@@ -1,0 +1,28 @@
+DOM manipulation is heart of modern web but slower than most JavaScript operations
+Slowness is worsened due to JavaScript framework updates on the DOM more than necessary
+EXAMPLE:
+  -A list of 9 items
+  -Cross out one of the items
+  -Most JavaScript frameworks rebuild the entire list
+  -9 times the work than necessary, since only 1 item changed
+
+Rebuilding is not a big deal but modern sites use huge amounts of DOM manipulation & becomes
+  inefficient
+
+
+VIRTUAL DOM
+Every DOM object in React has a corresponding virtual DOM object
+Virtual DOM is representation of a DOM object, a carbon copy
+DOM and Virtual DOM have same properties but VDOM lacks power to directly change on screen
+VDOM manipulation is faster because nothing gets hassled on screen
+EXAMPLE:
+  -VDOM manipulation is like editing a blueprint
+  -Instead of moving rooms in an actual house
+
+
+PROS OF VIRTUAL DOM
+-Diffing: React figures out exactly which virtual DOM objects have changed with comparison of new
+VDOM and a pre-update version
+-Once React knows which DOM objects have changes, those objects are they only updates on the real
+DOM
+-Changes are then on the screen after update
