@@ -1,0 +1,69 @@
+Presentation component primarily renders the interface developers build, to make the piece look good
+-When declaring a React component with 'class ComponentName extends Component' this will create
+ actual instance of Component
+-Presentational component is not a formal type of class defined by React library, no such thing as
+ PresentationalComponent in React library
+-More so a convention/programming pattern used for React UI's
+
+PRESENTATIONAL COMPONENT FEATURES
+-primarily concerned with how it looks
+-probably only contain a render method
+-don't know how to load or alter data that is rendered
+-rarely have changeable state properties
+-best written as stateless functional components
+
+
+I HAVE BEEN WRITING PRESENTATIONAL COMPONENTS!!!!!!
+Presentational component simply doesn't know about data it displays and just presents it
+EXAMPLE: HelloWorld component
+class HelloWorld extends Component {
+  render() {
+    return <div class='hello-world'>Hello {this.props.message || 'World'}</div>
+  }
+}
+*component only renders piece of UI, no notion to fetch/reload 'message', no changeable state,
+only contains render() method*
+
+
+WHEN IS A SIMPLE PRESENTATIONAL COMPONENT NEEDED?
+-Used to standardize and place some limits on characteristics of text inputs in a massive web
+application
+EXAMPLE: TextField component
+const defaultLimit = 100
+
+class TextField extends Component {
+  render() {
+    return (
+      <input
+        className='field field-light'
+        onChange={this.props.onChange}
+        maxLength={this.props.limit || defaultLimit}
+      />
+    )
+  }
+}
+*simple presentational component yet very powerful, establishes simple API for all text fields with
+onChange callback, interactivity through the addition of callbacks*
+
+-Can define more unique and customized modules that are primarily presentational
+-All almost stateless and receive props from parent to render
+-Due to stateless attribute, they are less buggy
+
+
+STATELESS FUNCTIONAL COMPONENT & PURE FUNCTIONS
+-Presentational components can be even simpler
+-If a component has no state then is doesn't need to be JavaScript object type Component
+-It can be a simple function
+EXAMPLE: TextField component
+const defaultLimit = 100
+
+const TextField = (props) =>
+  <input
+    className='field field-light'
+    onChange={props.onChange}
+    limit={props.limit || defaultLimit}
+  />
+*very concise and stateless making the component extremely stable and predictable*
+
+-This is a pure function, its stateless variables don't set different values at different
+times leading to a return that wasn't predicted
