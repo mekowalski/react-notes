@@ -81,3 +81,8 @@ Order.propTypes = {
     orderedAt: PropTypes.number.isRequired // We're using UNIX timestamps here
   }).isRequired
 };
+
+*React.PropTypes.shape(): validates whether passed in value is an object with properties
+(and their value types) matching those in the passed object*
+EXAMPLE: Dinner should be an object with potato and a string with turkey
+React.PropTypes.shape({potato: React.PropTypes.object, turkey: React.PropTypes.string })
