@@ -1,0 +1,84 @@
+Props are good because state is complex, using state is often necessary and is able to explicitly
+and reliably update component, also a powerful feature
+-When a component has state, it is less predictable with return and behavior
+*while we often need state in applications, it is state that the brain struggles most to parse &
+track*
+
+Props provides variety of ways to minimize the number of components in an app that manage state
+-props help minimize state because the data is sent down into nested child components and the state
+is pushed up, concentrates at the top of UI
+
+
+USE-CASE FOR PUSHING STATE UPWARDS
+EXAMPLE: FruitBasket app tracks fruits eaten, 2 components FruitNotEaten & FruitEaten
+class FruitEaten extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    fruitList: []
+    }
+  }
+
+  componentWillMount() {
+    fetch('/api/fruit?eaten=true')
+      .then(response => response.json())
+      .then(fruitlist => this.setState({})
+    )
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.fruitList.map(fruit =>
+          <li key={fruit}>{fruit}</li>
+        )}
+      </ul>
+    )
+  }
+}
+*component fetches list of already eaten fruit and renders to a list*
+*FruitNotEaten component isn't implemented and also will fetch and update its state*(repetition)
+
+
+MINIMIZE STATE WITH PROPS
+-Both components are lists, very similar
+-The 2 components can be one simple presentational component called FruitList
+-It will receive a list as a 'prop' therefore making FruitList stateless
+const FruitList = props =>
+  <ul>
+    {props.fruitList.map((fruit) => {
+      return <li key={fruit}>{fruit}</li>
+    })}
+  </ul>
+*much simpler. state can be handles at the top of application by FruitList's parent
+
+class App extends React.Component {
+  construtor(props) {
+    super(props)
+    this.state = {
+      showEaten: false,
+      fruits: []
+    }
+  }
+
+  componentWillMount() {
+    this.updateFruitList()
+  }
+
+  togleListMode = () =>
+  this.setState({
+    showEaten: !this.state.showEaten
+  })
+
+  updateFruitList = () => {
+    fetch('/api/fruit?eaten=${this.state.showEaten}')
+      .then(response => response.json())
+      .then(fruits => this.setState({fruits})
+    )
+  }
+
+  render() {
+    return <FruitList fruitList={this.state.fruits}/>
+  }
+}
+*setup mechanism to fetch list from the backend
