@@ -83,3 +83,16 @@ React.Children.map takes 2 parameters:
   second is a function that transforms value of the child
 -Adding extra prop with React.cloneElement
 -Additional props get merged with the child's existing props, overwriting any props with same key
+
+*Some components don't know about their children ahead of time, common for components like
+'Sidebar' or 'Dialog' that represent generic 'boxes'*
+Recommended that such components use the special 'children' props to pass children elements
+directly into their output
+EXAMPLE: since example is a function, 'this' isn't used only 'props.children'
+function FancyBorders(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  )
+}
