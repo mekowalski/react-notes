@@ -35,3 +35,13 @@ eg:
     ...
     </div>
   )
+
+-JSX can include JavaScript
+-Can write pseudo-HTML in JSX
+-Also write plain JavaScript inline by wrapping in {}
+eg:
+  <p>{ math.floor(Math.random()*100) retweets }</p>
+  <p>{ this.currentTime() }</p>
+
+-Arrow Functions: Syntax is important, to implicitly bind a method to a class
+eg: currentTime = () => new Date().toString()
