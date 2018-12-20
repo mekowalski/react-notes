@@ -37,6 +37,13 @@ eg: removing last element from array
  like
  eg:
  <div id='my-hog-world' className='hog-style'>
-   { filterHogsArray.ap(hog => '<img src=${hog.img}>') }
+   { filteredHogsArray.ap(hog => '<img src=${hog.img}>') }
    ^^^show all my hogs in the list elements
  </div>
+
+-When rendered there should be a <div> element with an <img> element for every item in filteredHogsArray
+ (declarative)
+
+-Declarative allows focus on what React app should look like, opposed to being concerned with manually
+ updating DOM, adding and removing classes, etc
+-JUST TELL REACT END RESULT AND IT WILL DO HEAVY LIFTING
