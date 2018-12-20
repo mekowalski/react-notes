@@ -2,3 +2,23 @@ JSX: allows writing of HTML -like code in JavaScript files
 -Creates a marriage of HTML and JS
 -React comps are written in effective and expressive manner that ultimately looks a lot like end result seen
  in browser
+
+
+WHAT JSX LOOKS LIKE
+-React comps return JSX within render() methods
+eg:
+  class Tweet extends Component {
+    currentTime = () => new Date().toString()
+
+    render() {
+      return <div className='tweet'>
+        <img src='http://twitter.com/some-avatar.png' className='tweet_avatar' ?>
+        <div className='tweet_body'>
+          <p>We are writing this tweet in JSX. Holy Moly!</p>
+          <p>{ math.floor(Math.random()*100) retweets }</p>
+          <p>{ this.currentTime() }</p>
+        </div>
+      </div>
+    }
+  }
+  *HTML inside JS, with JS inside the HTML
