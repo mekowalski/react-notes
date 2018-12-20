@@ -59,3 +59,11 @@ REACT APPLICATION IDEA
       )
     }
   }
+  a. L55-58 are JSX, neither HTML nor JS, React's syntax brainchild
+  b. App's Component render() method is straightforward of what is supposed to happen
+    -Hey App Comp, when you render
+    -Be responsible for making both Article and Comment components
+
+-Unpacks logically
+  App Component wraps around both Article and Comment
+  Making App parents of Article and Comment
