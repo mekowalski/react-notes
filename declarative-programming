@@ -30,3 +30,13 @@ eg: removing last element from array
     -I have an array: [3, 6, 9]
     -I want an array like that but without the last element
     -Computer, make it happen
+
+-Find a hog by weight(component) that allows filtering an array of existing hogs by weight
+-Component accepts a weight to filter and displays the matching hog
+-Instead of describing HOW to update browser, React is provided a template on WHAT the component should look
+ like
+ eg:
+ <div id='my-hog-world' className='hog-style'>
+   { filterHogsArray.ap(hog => '<img src=${hog.img}>') }
+   ^^^show all my hogs in the list elements
+ </div>
