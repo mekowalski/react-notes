@@ -44,7 +44,7 @@ PASSING INFORMATION
 EXPANDING APPLICATION
 -Comment comp is still needed for each comment in Article
 
-3. Create Comment comp
+3a. Create Comment comp
   eg:
   class Comment extends React.Component {
     render() {
@@ -57,3 +57,21 @@ EXPANDING APPLICATION
   }
   *When used, will display content inherited, allowing passing of different content to multiple Comment
    comps
+
+3b. Add comment with reusable comps and passing content data down to the Comment comp
+  eg:
+  class Article extends React.Component {
+    render() {
+      return (
+        <div>
+          <Content articleText={'Dear Reader: The Reformation clothing line is innovative with their
+          selection of sustainable fabric and holistic approach on creating a higher standard in the
+          fashion industry.'}/>
+          <Comment commentText={'I fully support The Reformation!!! - UserRefLover'}/>
+          <Comment commentText={'Yes, agreed! plus the Reformation has feminine, flirty, fun pieces. -
+          AnotherTRlover'}/>
+          <Comment commentText={'A universal truth. - Noam Chimsky'}/>
+        </div>
+      )
+    }
+  }
