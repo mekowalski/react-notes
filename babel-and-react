@@ -29,3 +29,10 @@ eg: Babel turns JSX into normal JS written with React library
 
 -First JSX block is a mixture of HTML and plain JS
 -Second block transformed into valid JS syntax after Babel compile
+
+-Babel strictly isn't needed as a dependency when writing React code
+-This will mean writing in non-JSX syntax
+-JSX does remove the burden on the programmer to calculate intermediary picture of DOM
+-Babel can ALSO compile other features and syntactic sugar that isn't part of ECMAScript(JavaScript)
+
+*Babel ensures syntax compiled to be used in browsers
