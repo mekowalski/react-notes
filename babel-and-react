@@ -1,4 +1,13 @@
 -JavaScript is an evolving language
 -Over time there have been several iterations, changes to incorporate more features, language construct(ES6)
 -This resembles the confounded mirroring the story of Tower of Babel
+
 -Babel: makes all JS versions emit a common standard code
+-Babel gains popularity because it compiled/transpiled newer ES6 features into the older ES5
+-Currently browsers implement ES6 syntax
+
+
+BABEL IMPORTANCE
+-Although current browsers integrate ES6, developers have realized the processing of their code with Babel
+-Code written conveniently and neatly can be compiled in Babel into verbose, compliant JS code
+-Non-standard JSX transformed into compliant JS
