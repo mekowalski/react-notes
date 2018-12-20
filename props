@@ -24,6 +24,8 @@ eg: MovieCard Comp with hardcoded data
       document.getElementById('root')
     );
 
+
+PASSING IN PROPS
 -Instead of writing another component to render another movie card for another movie, just pass in props
 to a component
 -To pass in props to a component, add them as attributes when rendering them:
@@ -41,6 +43,7 @@ ReactDOM.render(
 
 
 ACCESSING PROPS
+-PROPS in a comp can be accessed through this.props in render() method
 -Change hardcoded data in the `render()` method to use props we pass in instead
 class MovieCard extends React.Component {
   render() {
