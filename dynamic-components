@@ -75,3 +75,14 @@ EXPANDING APPLICATION
       )
     }
   }
+  *Information is passed from Parent to many Child comps
+  *React renders REAL-LIVE DOM Elements when code is put into new appliation
+  *Provided are legitimate classes, ids, minor CSS bt better visual display
+
+-Dynamic components are CORE to REACT programming
+-React app consists of combined React comps that are smarter and bigger
+
+NOTE ON THE PAST
+-React has spanned transition from ES5 to ES6, some React code will look different
+-React.createClass() was previously used to define Classes and extend React.Component
+-Current replacement is class Classname extends React.Component()
