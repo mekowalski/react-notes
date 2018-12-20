@@ -12,7 +12,7 @@ Process of hiring someone to paint the house
 
 1. Explicitly describe actions a program should take
 2. Describe HOW a program should go about those actions
-eg: removing las element from array
+eg: removing last element from array
     -Access element as index arr.length - 1 from this array and erase it from memory
     -Resize the array to have 1 less element at the end
     -Return the new array
@@ -23,3 +23,10 @@ Process of hiring someone to paint the house
 -Tell them to paint the house walls this color
 -They get it done
 *No other explanation because the painter knows EXACTLY what to do
+
+1. Describe WHAT a program should accomplish, or what end result should be
+2. Leaves the determination of HOW to get the end result up to the program
+eg: removing last element from array
+    -I have an array: [3, 6, 9]
+    -I want an array like that but without the last element
+    -Computer, make it happen
