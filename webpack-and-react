@@ -57,8 +57,8 @@ SIMPLIFIED WEBPACK EXAMPLE
 -Files needed to constitute a whole web application
 eg:
   reveal.js(pre Webpack)
-  function reveal(person, realId) {
-    person.identity = realId
+  function reveal(dog, realId) {
+    dog.identity = realId
   }
 
   export default reveal
@@ -75,3 +75,20 @@ eg:
 
 *Without Webpack, both files would need to be sent to client to ensure they are working well together
 *Instead of writing custom, bespoke, effective solution, Webpack will come to the rescue
+
+
+UNLEASHING WEBPACK ON FILES
+eg: bundle.js(post Webpack)
+    function reveal(dog, realId) {
+      dog.identity = realId
+    }
+
+    const goodDog = {
+      name: 'Caroga Dog',
+      identity: 'Sweet Pibull/Chocolate Lab, waggy tail, dog in the Kowalski house'
+    }
+
+    reveal(goodDog, 'Best Dog')
+
+*Single, all-encompassing file ensuring dependencies are right where they belong
+*Webpack: Manages pesky dependency loading by pre-digesting many files' code & outputting a single 'bundle'
