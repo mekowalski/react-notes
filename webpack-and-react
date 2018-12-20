@@ -40,3 +40,14 @@ eg: index.html
       //written here
     </script>
     ...
+
+-Unfortunately this is not practical, combining JS code from multiple files into one
+-Webpack: intelligently packages the JS code and sends it to the client over the internet
+eg:
+  1. siliconOverlord.js has space-age AI code
+  2. enslaveHumanity.js wants to make use of other file and send it to browsers all over the internet
+  3. Webpack pre-bundles both files together to sent once
+
+-Webpack will check every file of a React application for dependencies that needs to be imported
+-The end result is one big JS file including all the code, including dependencies
+-Meaning a single transfer of a single thins to client when asked for React apps
