@@ -28,5 +28,21 @@ REACT APPLICATION IDEA
   a. Declared new class: Article
   b. Class extends React's Component class(providing built in methods and attributes)
   c. RENDER() method defined and return is explicitly provided
+-When React creates element and adds it to the DOM, the HTML should be a <div> on the page with lines 22-23
+
+  -Make a component to display user comments
+  eg:
+  class Comment extends React.Component {
+    render() {
+      return (
+        <div>
+          Naturally, I, UserWhatever, agree with this article.
+        </div>
+      )
+    }
+  }
+  *Same component set up as Article, explained in L28-30*
+-Both examples are JavaScript interpreted by React within the render()'s return() statement and displaying
+ plain HTML that browsers know how to represent to the user
 
 2. Use the component
