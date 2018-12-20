@@ -1,26 +1,28 @@
+WHAT ARE PROPS
 Props allow the passing of values to components, they can be anything: string, array, functions, etc
 It also allows the components to be more dynamic and reusable
 
 A MovieCard component with Title, Poster image and other PROPerties
-import React from 'react';
-import ReactDOM from 'react-dom';
+eg: MovieCard Comp with hardcoded data
+    import React from 'react';
+    import ReactDOM from 'react-dom';
 
-class MovieCard extends React.Component {
-  render() {
-    return (
-      <div className="movie-card">
-        <img src="http://image.tmdb.org/t/p/w342/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="Mad Max: Fury Road" />
-        <h2>Mad Max: Fury Road</h2>
-        <small>Genres: Action, Adventure, Science Fiction, Thriller</small>
-      </div>
+    class MovieCard extends React.Component {
+      render() {
+        return (
+          <div className="movie-card">
+            <img src="http://image.tmdb.org/t/p/w342/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="Mad Max: Fury Road" />
+            <h2>Mad Max: Fury Road</h2>
+            <small>Genres: Action, Adventure, Science Fiction, Thriller</small>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      <MovieCard />,
+      document.getElementById('root')
     );
-  }
-}
-
-ReactDOM.render(
-  <MovieCard />,
-  document.getElementById('root')
-);
 
 -Instead of writing another component to render another movie card for another movie, just pass in props
 to a component
