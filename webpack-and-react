@@ -21,3 +21,22 @@ eg: index.html
       </body>
     </html>
 *This approach makes 3 HTTP requests to the server
+1. Hit base URL and returned to index.html file
+2. index.html tells browser to request jquery.js from server
+3. index.html tells browser to also request animateDiv.js from server
+
+-Swifter way around this is to either combine JavaScript files into one file on the server
+eg: index.html
+    ...
+    <script src="combinedJqueryAnimateDiv.js"></script>
+    ...
+
+-Or one step further and even in-line the JavaScript directly into HTML in a <script> tag, sending
+ everything at once
+eg: index.html
+    ...
+    <script>
+      //all the contents of jquery.js and animateDiv.js
+      //written here
+    </script>
+    ...
