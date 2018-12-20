@@ -1,2 +1,23 @@
 Webpack: allows combination of different files automatically
 -Can freely import external JS code in JavaScript files
+
+
+THE PROBLEM
+-A server sending JS using webpage to browsers
+-A script of animateDiv.js for browser to receive that itself makes use of jQuery
+-First file sent to a requesting client(index.html)
+eg: index.html
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <script src="jquery.js"></script>
+        <script src="animateDiv.js"></script>
+        <title>Discotek</title>
+      </head>
+      <body>
+        <div class="animat" onclick="animateDiv.js">
+          I'm going to animate if you click me!
+        </div>
+      </body>
+    </html>
+*This approach makes 3 HTTP requests to the server
