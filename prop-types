@@ -4,7 +4,8 @@ Helps with code modularity and reuse, helpful for working with multiple develope
 Example:
   -Country Fair Hog Profile Card
   -Card uses several props: hogName, farmer, foodLikes, weightClass, etc
-  -It would be good to validate component, making sure all PROPS are passed in, otherwise card is incomplete
+  -It would be good to validate component, making sure all PROPS are passed in, otherwise card is
+   incomplete
   -Also add certain behavior, a hog can't compete outside of a weight class with string value of:
    'lightWeight', 'welterWeight', 'heavyWeight'
   -All can be achieved using PropTypes
@@ -91,8 +92,8 @@ Order.propType = {
 DEFINING 'SHAPE' FOR OBJECT PROTOTYPES
 -orderInfo prop is supposed to be an object with properties
 -With `React.PropTypes.shape` the component can expect the prop to have certain shape
--Can further validate component's props to be even more specific and to to be doubly sure that
-we're getting the right data
+-Can further validate component's props to be even more specific and to be doubly sure that we're
+ getting the right data
 
 Order.propTypes = {
   //Previous PropTypes
