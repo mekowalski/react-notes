@@ -16,7 +16,12 @@ USING PROPTYPES
 -Are some of them required
 
 *Modern ice cream store where orders are done via computer and shown in browser via React*
-*<Order/> component*
+cone: boolean indicating if ice cream should be in cone, defaults to true
+size: a string to indicate side of order, defaults to 'regular'
+scoops: an array of ice cream flavors
+orderInfo: an object containing data about ice cream order
+
+eg: Order component
 class Order extends React.Component {
   render() {
     return (
