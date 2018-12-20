@@ -1,7 +1,7 @@
 JSX: allows writing of HTML -like code in JavaScript files
 -Creates a marriage of HTML and JS
--React comps are written in effective and expressive manner that ultimately looks a lot like end result seen
- in browser
+-React comps are written in effective and expressive manner that ultimately looks a lot like end result
+ seen in browser
 
 
 WHAT JSX LOOKS LIKE
@@ -45,3 +45,12 @@ eg:
 
 -Arrow Functions: Syntax is important, to implicitly bind a method to a class
 eg: currentTime = () => new Date().toString()
+
+-JSX Cannot include ALL JS statements
+-Because it is am extension of JS, JSX is considered declarative
+-With proper syntax, React knows what needs to be translated
+eg: When statement is written:
+  <h1 id='header'>Hello!</h1>
+
+  -JSX needs to be converted into regular imperative JS:
+  React.createElement('h1', {id: 'header'}, 'Hello!')
