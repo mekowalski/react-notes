@@ -51,3 +51,27 @@ eg:
 -Webpack will check every file of a React application for dependencies that needs to be imported
 -The end result is one big JS file including all the code, including dependencies
 -Meaning a single transfer of a single thins to client when asked for React apps
+
+
+SIMPLIFIED WEBPACK EXAMPLE
+-Files needed to constitute a whole web application
+eg:
+  reveal.js(pre Webpack)
+  function reveal(person, realId) {
+    person.identity = realId
+  }
+
+  export default reveal
+
+  main.js(pre Webpack)
+  import reveal from './reveal.js'
+
+  const goodDog = {
+    name: 'Caroga Dog',
+    identity: 'Sweet Pibull/Chocolate Lab, waggy tail, dog in the Kowalski house'
+  }
+
+  reveal(goodDog, 'Best Dog')
+
+*Without Webpack, both files would need to be sent to client to ensure they are working well together
+*Instead of writing custom, bespoke, effective solution, Webpack will come to the rescue
