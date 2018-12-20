@@ -10,6 +10,13 @@ Process of hiring someone to paint the house
 -Move the brush in a stroking fashion on the house walls
 *Telling painter EXACTLY what to do, micromanage
 
+1. Explicitly describe actions a program should take
+2. Describe HOW a program should go about those actions
+eg: removing las element from array
+    -Access element as index arr.length - 1 from this array and erase it from memory
+    -Resize the array to have 1 less element at the end
+    -Return the new array
+
 DECLARATIVE:
 Process of hiring someone to paint the house
 -Hire the person
