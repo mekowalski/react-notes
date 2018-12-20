@@ -1,1 +1,21 @@
 Dynamic Components: can describe a template of HTML and fill in variable data
+
+MAKING COMPONENTS DYNAMIC
+-Content: Contains the content of article
+-Comment: Contains a User's comment
+-Article: top level React component responsible for rendering both Content and Comment
+
+1. Create Content comp
+  eg:
+  class Content extends React.Component {
+    render() {
+      return (
+        <div>
+          {this.props.articleText}
+        </div>
+      )
+    }
+  }
+  *Snippet shows how to describe variables in component's render() method
+  *{this.props.articletext} tells React to place value this line of code represents within a <div>
+  *where does {this.props.articleText} come from
