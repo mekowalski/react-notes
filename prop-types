@@ -69,8 +69,8 @@ Order.defaultProps = {
 };
 
 5.
--Property on component class is always called propTypes
--React prop types assigned to them are apitalized as PropTypes
+-Property on component class is always called propTypes (attributes of Component ie: name, age, size)
+-React prop types assigned to them are apitalized as PropTypes (Data Type ie: boolean, string, object)
 Order.propTypes = {};
 
 -First PropType to the `cone`
@@ -85,6 +85,7 @@ Order.propType = {
   //`isRequired` makes sure the scoops prop is provided when rendering & expect array of strings
   orderInfo: PropTypes.object.isRequired
 }
+*Now all the PROPS of Order comp are validated, being sure the right data gets passed in
 
 
 DEFINING 'SHAPE' FOR OBJECT PROTOTYPES
