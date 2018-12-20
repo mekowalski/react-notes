@@ -13,4 +13,20 @@ REACT APPLICATION IDEA
  classic heated discussions
 -The application should display the opinion/responses/comments to the article
 1. Write the components
+  -Make a component to showcase an opinion
+  eg:
+  class Article extends React.Component {
+    render() {
+      return (
+        <div>
+          Dear Reader: The Reformation clothing line is innovative with their selection of sustainable
+           fabric and holistic approach on creating a higher standard in the fashion industry.
+        </div
+      )
+    }
+  }
+  a. Declared new class: Article
+  b. Class extends React's Component class(providing built in methods and attributes)
+  c. RENDER() method defined and return is explicitly provided
+
 2. Use the component
