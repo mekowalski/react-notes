@@ -46,3 +46,16 @@ REACT APPLICATION IDEA
  plain HTML that browsers know how to represent to the user
 
 2. Use the component
+  -Make use of component's render() method, every React app has top level component(s)
+  -Often times than not, top level component is called App
+  eg:
+  class App extends React.Component {
+    render() {
+      return (
+        <div>
+          <Article />
+          <Comment />
+        </div>
+      )
+    }
+  }
