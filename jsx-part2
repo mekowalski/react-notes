@@ -54,3 +54,16 @@ eg: When statement is written:
 
   -JSX needs to be converted into regular imperative JS:
   React.createElement('h1', {id: 'header'}, 'Hello!')
+
+
+A COMPONENT MUST RETURN ONE JSX ELEMENT
+-Any HTML element may be used to contain content
+eg: div, figure, table, main, etc
+-All of these comps have one returned JSX that contains everything else
+-Without an element that wraps returned JSX, an error will arise
+
+
+AVOID KEYWORDS
+-Since JSX is still writing in JavaScript code, certain keywords are off limits in code
+eg: className is an attribute(PROP) class is a reserved keyword in JS
+eg: for label is a reserve keyword in JS, htmlFor is used as for attribute
