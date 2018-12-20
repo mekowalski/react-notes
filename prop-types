@@ -21,6 +21,7 @@ size: a string to indicate side of order, defaults to 'regular'
 scoops: an array of ice cream flavors
 orderInfo: an object containing data about ice cream order
 
+1.
 eg: Order component
 class Order extends React.Component {
   render() {
@@ -37,6 +38,7 @@ class Order extends React.Component {
   }
 }
 
+2.
 Order.defaultProps = {
   cone: true,
   size: 'regular',
@@ -44,9 +46,11 @@ Order.defaultProps = {
   orderInfo: {'customerName', 'orderedAt'}
 }
 
+3.
 -Next add the PropTypes node package to `node_nodules` folder to access `PropTypes`:
 `npm install prop-types`
 
+4.
 -Then begin adding PropTypes to validate all props being passed in
 -Set propTypes property(an object) on the `Order` class and import PropTypes at top of file
 import React from 'react';
@@ -64,6 +68,9 @@ Order.defaultProps = {
   size: 'regular'
 };
 
+5.
+-Property on component class is always called propTypes
+-React prop types assigned to them are apitalized as PropTypes
 Order.propTypes = {};
 
 -First PropType to the `cone`
