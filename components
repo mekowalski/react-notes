@@ -1,4 +1,7 @@
 *If idea and application of components don't click immediately, DO NOT WORRY*
+React Doc: 'Components let you split the UI into independent, reusable pieces and think about each piece
+in isolation'
+
 A React application consists of several React components combined
 Unlike simple HTML elements, React components are smarter and bigger
 
