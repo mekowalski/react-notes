@@ -92,3 +92,12 @@ eg: bundle.js(post Webpack)
 
 *Single, all-encompassing file ensuring dependencies are right where they belong
 *Webpack: Manages pesky dependency loading by pre-digesting many files' code & outputting a single 'bundle'
+
+
+LOOKING FORWARD
+-How important is Webpack/Babel
+-How much knowledge is needed about these different tools that improve React development VS React
+ programming
+-create-react-app is opaque with configuration files
+-Most React code is currently, and will continue to be, compiled
+-Babel and Webpack will be abstracted to focus on primary React competencies
