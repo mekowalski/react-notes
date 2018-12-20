@@ -19,3 +19,24 @@ MAKING COMPONENTS DYNAMIC
   *Snippet shows how to describe variables in component's render() method
   *{this.props.articletext} tells React to place value this line of code represents within a <div>
   *where does {this.props.articleText} come from
+
+
+PASSING INFORMATION
+-React allows passing units of information from parent comp down to child comp called PROPS
+
+2. Pass info from Parent to Child via PROPS
+  eg:
+  class Article extends React.Component {
+    render() {
+      return (
+        <div>
+          <Content articleText={'Dear Reader: The Reformation clothing line is innovative with their
+          selection of sustainable fabric and holistic approach on creating a higher standard in the
+          fashion industry.'}/>
+        </div>
+      )
+    }
+  }
+  *Render Content comp, assigning an accessible value to articleText from within Content comp as
+   this.props.articleText
+   
