@@ -11,3 +11,21 @@ BABEL IMPORTANCE
 -Although current browsers integrate ES6, developers have realized the processing of their code with Babel
 -Code written conveniently and neatly can be compiled in Babel into verbose, compliant JS code
 -Non-standard JSX transformed into compliant JS
+eg: Babel turns JSX into normal JS written with React library
+  JSX
+  var profile = (
+    <div>
+      <imag src='avatar.png' className='profile' />
+      <h3>{[user.firstName, user.lastName].join(' ')}</h3>
+    </div>
+  )
+
+  Babel compiled
+  var profile = (
+    React.createElement('div', null,
+    React.createElement('img', {src: 'avatar.png', className: 'profile'}),
+    React.createElement('h3', null, [user.firstName, user.lastName].join(' ')))
+  )
+
+-First JSX block is a mixture of HTML and plain JS
+-Second block transformed into valid JS syntax after Babel compile
