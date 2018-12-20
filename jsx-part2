@@ -22,3 +22,16 @@ eg:
     }
   }
   *HTML inside JS, with JS inside the HTML
+
+-JSX is NOT a string, it is NOT wrapped in quotes
+-Consider is as another Type of JavaScript
+
+-JSX value is of the render() method
+-Every comp used needs a render() method to return valid JSX
+-Entire statement is wrapped in () considered as a chunk of JSX code
+eg:
+  return (
+    <div className='tweet'>
+    ...
+    </div>
+  )
