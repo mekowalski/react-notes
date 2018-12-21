@@ -1,5 +1,9 @@
 Real power is in updating state
+-If state doesn't need updating then the component shouldn't have any state
+-State is reserved for data that CHANGES in component and visible in the UI
+
 Use this.setState(), available to all React components instead of directly modifying with this.state
+-Component should re-render because its state has changed and its UI like will change
 
 *code along in react-updating-state*
 *refer to scr/components/ClickityClick.js*
