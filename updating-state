@@ -31,7 +31,7 @@ handleClick = () => {
 
 HOW STATE GETS MERGED
 -Object will get merged with the current state when using this.setState() and passing in an object,
-once state updates, component re-renders automatically
+ once state updates, component re-renders automatically
 -Before merge
 eg:
 {
@@ -47,6 +47,37 @@ eg:
 }
 
 -State only merges on the first level
+-A state will be merged but any objects get overwritten, because it doesn't deeply merge with the object
+ passed into this.setState()
+ eg:
+ {
+  theme: 'blue',
+  addressInfo: {
+    street: null,
+    number: null,
+    city: null,
+    country: null
+  },
+}
+
+-Update addressInfo.city
+this.setState({
+  addressInfo: {
+    city: 'New York City'
+  }
+})
+
+-Following result shape
+{
+  theme: 'blue',
+  addressInfo: {
+    city: 'New York City',
+  },
+}
+
+-A deep merge happens recursively, leaving any unchanged properties intact
+-Object.assign() merges the object with the new Data
+
 
 
 SETTING STATE IS NOT SYNCHRONOUS
