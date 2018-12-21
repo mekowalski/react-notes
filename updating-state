@@ -9,11 +9,19 @@ Use this.setState(), available to all React components instead of directly modif
 *refer to scr/components/ClickityClick.js*
 *refer to src/index.js*
 
--To update state, use this.setState()
-// src/components/ClickityClick.js
-...
-//after defining initial state
+class ClickityClick extends React.Component {
+  constructor() {
+    super()
 
+    //define initial state
+    this.state = {
+      hasBeenClicked: false,
+      currentTheme: 'blue'
+    }
+  }
+
+-To update state, use this.setState()
+//update state here
 handleClick = () => {
   this.setState({
     hasBeenClicked: true
