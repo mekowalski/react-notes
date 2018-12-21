@@ -107,7 +107,15 @@ this.setState({
 
 SETTING STATE IS NOT SYNCHRONOUS
 -It may seem that setting state is synchronous because it updates right away but it is NOT synchronous
--State changes happen asynchronously although they appear to instantly update
+-State changes happen asynchronously although they appear to instantly update whenever React feels it's
+ appropriate, which may result in unexpected behavior
+eg:
+handleClick = () => {
+  this.setState({
+    hasBeenClicked: true
+  })
+  console.log(this.state.hasBeenClicked); // prints false
+}
 
 
 STATE CHANGES VS PROPS CHANGES
