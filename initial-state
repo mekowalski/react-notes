@@ -1,5 +1,7 @@
 State in React is data that is mutated in a component, component can't change its own prop but can
 change its state
+(I can't change my eye color but I can change my mood)
+
 -State handles:
   Interactivity, changing data when a button is clicked
   Fetching remote data, state gives a way of updating component once data arrives
@@ -9,6 +11,12 @@ Props and state are used as input for render() to determine output but not the s
 -Will this data ever change?
   No: it's a prop
   Yes: it's a state
+  eg: class Person
+  -Attributes: birthDate, eyeColor, mood
+  birthDate: 07301991
+  eyeColor: brown
+  mood: {'content', 'annoyed', 'joyful', 'confused'} //this mood can change from annoyed to joyful
+  //mood data is state that will be changed probably constantly
 
 
 SETTING INITIAL STATE
