@@ -1,3 +1,4 @@
+ACCESSING EVENT DATA
 SyntheticEvent events has all usual properties and methods: type, target, mouse coords etc
 Adding event handlers to component and use event's data:
 export default class Clicker extends React.Component {
@@ -18,5 +19,5 @@ increase performance of applications
 cleaned up for later use
 -Can't access event data in an asynchronous manner by saving it in the state
 -If accessing data is necessary then either:
-  store the data in a variable 'const target = event.target'
-  make the event persistent with 'event.persist()'
+  1. Store the data in a variable 'const target = event.target'
+  2. Make the event persistent with 'event.persist()'
