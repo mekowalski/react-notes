@@ -28,11 +28,24 @@ handleClick = () => {
   })
 }
 
-...
 
-
+HOW STATE GETS MERGED
 -Object will get merged with the current state when using this.setState() and passing in an object,
 once state updates, component re-renders automatically
+-Before merge
+eg:
+{
+  hasBeenClicked: false,
+  currentTheme: 'blue'
+}
+
+-After merge
+eg:
+{
+  hasBeenClicked: true,
+  currentTheme: 'blue'
+}
+
 -State only merges on the first level
 
 
