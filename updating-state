@@ -127,6 +127,6 @@ handleClick = () => {
 
 
 STATE CHANGES VS PROPS CHANGES
--State and Props changes will both trigger re-render in React component
--State changes though, will only happen internally due to components changing their own state
+-State and Props changes will BOTH trigger re-render in React component
+-State changes though, will only happen INTERNALLY due to components changing their own state
 -Props changes occur eternally due to changes in the prop values being passed in
