@@ -1,7 +1,7 @@
 A React component may have one, many or no children
 -VideoPlayer has 2 children
   VideoHeader
-    One Chile:h1
+    One Child:h1
   VideoControls
     No Child(ren)
 
