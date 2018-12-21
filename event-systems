@@ -24,5 +24,17 @@ element much like adding to prop*
 -Always compromised of 'on' and the event name itself (click or submit, etc)
 eg: <button onClick={this.tickle}>Tickle me!</button>
 
+-Added this event handler to an element, similar to adding a prop
+eg:
+class Tickler extends React.Component {
+  //code here
+
+  render() {
+    return (
+      <button onClick={this.tickle}>Tickle me!</button>
+    );
+  }
+}
+
 -Passing a function reference, not executing the tickle function
--L9: not required, all methods in React component always use THIS one way or another
+-L11: NOT required, all methods in React component always use THIS one way or another
