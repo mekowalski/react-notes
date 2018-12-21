@@ -117,6 +117,14 @@ handleClick = () => {
   console.log(this.state.hasBeenClicked); // prints false
 }
 
+-To access new state after it's update, optionally add callback as 2nd arg to this.setState()
+eg:
+handleClick = () => {
+  this.setState({
+    hasBeenClicked: true
+  }, () => console.log(this.state.hasBeenClicked)) // prints true, 2nd arg of setState()
+}
+
 
 STATE CHANGES VS PROPS CHANGES
 -State and Props changes will both trigger re-render in React component
