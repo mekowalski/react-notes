@@ -77,6 +77,21 @@ this.setState({
 
 -A deep merge happens recursively, leaving any unchanged properties intact
 -Object.assign() merges the object with the new Data
+eg:
+this.setState({
+  addressInfo: Object.assign({}, this.state.addressInfo, {
+    city: 'New York City'
+  })
+})
+
+-Spread operator (...this.state.whateverObject)
+eg:
+this.setState({
+  addressInfo: {
+    ...this.state.addressInfo,
+    city: 'New York City'
+  }
+})
 
 
 
