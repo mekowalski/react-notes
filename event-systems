@@ -1,6 +1,8 @@
-React has its own event system for handling called SyntheticEvent
-Having a specific event system instead of using native events is cross-browser compatibility
-Important to keep in mid that they are the exact same events, just implemented more consistently
+-React has its own event system for handling called SyntheticEvent
+-Having a specific event system instead of using native events is cross-browser compatibility
+-Important to keep in mind that they are the exact same events, just implemented more consistently
+-These events also have methods like preventDefault() and stopPropagation(), etc
+
 
 HOW TO ADD EVENT HANDLERS
 Example:
@@ -18,9 +20,9 @@ class Tickler extends React.Component {
 }
 *no way to trigger tickle() function, therefore add an event handler to it, attach handler to
 element much like adding to prop*
--Always compromised of 'on' and the event name itself (click or submit, etc)
 
-<button onClick={this.tickle}>Tickle me!</button>
+-Always compromised of 'on' and the event name itself (click or submit, etc)
+eg: <button onClick={this.tickle}>Tickle me!</button>
 
 -Passing a function reference, not executing the tickle function
 -L9: not required, all methods in React component always use THIS one way or another
