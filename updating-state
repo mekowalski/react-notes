@@ -93,6 +93,16 @@ this.setState({
   }
 })
 
+-Both Object.assign() and Spread Op result in proper updated state
+{
+ theme: 'blue',
+ addressInfo: {
+   street: null,
+   number: null,
+   city: 'New York City',
+   country: null
+ },
+}
 
 
 SETTING STATE IS NOT SYNCHRONOUS
