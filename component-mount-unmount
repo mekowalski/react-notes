@@ -10,6 +10,25 @@ eg: having a picnic
   -put things in basket and head out
 
 
+PRE-MOUNTING
+-Constructor is the first function called upon instantiating ANY class in JS, not just React
+ components
+-Acts are the perfect place to set initial state of component
+eg:
+  constructor() {
+    super()
+    this.state = {
+      key: 'value'
+    }
+  }
+
+  state = {
+    key: 'value'
+  }
+*SUPER is called to execute constructor function inherite from React.Component while adding
+ functionality
+
+
 MOUNTING
 Mounting gives access to 2 lifecycle methods: componentWillMount and componentDidMount
 
