@@ -33,9 +33,30 @@ eg:
 
 -onChange fires every time a value of input changes
 -An anonymous function invoked, accepting event as its argument, then calls this.handleWhatever,
- then passing the event as an agrument
+ then passing the event as an argument
+
+ -Example of the anonymous functions
+ eg:
+ handleFirstNameChange = event => {
+  this.setState({
+    firstName: event.target.value
+  })
+ }
+
+ handleLastNameChange = event => {
+  this.setState({
+    lastName: event.target.value
+  })
+ }
+ *EVENT contains data about TARGET
+ *TARGET(being an INPUT) has a VALUE attribute
+ *VALUE attribute is equal of what's entered into INPUT
+ *THIS IS NOT VALUE PROVIDED FROM STATE*
+ *State is updated base on event.target.value
+ *The new state values set are used to set VALUE attributes of input(s)
 
 
+MORE ON FORMS
 -For elements include: <input>, <textarea>, <select>, <form>, not always specifically <input>
 Use specific prop to control value of inputs:
   -<input> & <textarea> use 'value'
