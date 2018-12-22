@@ -1,6 +1,12 @@
+COMPONENT LIFECYCLE
 React components have 2 sets of properties: state and props
-React framework was designed to enable creation of complex and highly reactive UI's
-The component lifecycles are divided into creation, updating and deletion
+-Props are given to comp by its Parent, external influence that comp has no control over
+eg: I have my dad's glossy, straight, black hair and facial features
+-State can change in conjunction to props changing or when User interacts with comp
+eg: My mood can change depending on my interactions with people or activities I engage in
+
+-React framework was designed to enable creation of complex and highly reactive UI's
+-The component lifecycles are divided into creation, updating and deletion
 EXAMPLE:
   -open new chat window is creation
   -interacting and sending messages with chat window is updating
