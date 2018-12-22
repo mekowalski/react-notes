@@ -59,7 +59,9 @@ Only one lifecycle method to delete or cleanup: componentWillUnmount
 
 COMPONENTWILLUNMOUNT
 -Last function to be called immediately before the component is removed from the DOM
--Cleaup for any DOM-elements or timers created in 'componentWillMount'
+-Cleanup for any DOM-elements or timers created in 'componentWillMount'
+-Extremely important to clean up all things that were set up in mounting stage
+-Not doing so will lead to consequences that may crash the application
 EXAMPLE: (weather app fetching data) clear the interval so the weather API would no longer get
 called every 15 seconds
   componentWillUnmount() {
