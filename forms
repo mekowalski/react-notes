@@ -18,8 +18,22 @@ class Form extends Component {
     )
   }
 }
+-This setup is half finished though, the display would not change and would only keep the same,
+ default value of 'Malind' or 'Another Name'
 
 
+UPDATING STATE VIA FORMS
+-If state values change, React will re-render and input(s) will display the new state
+-Want to fire setState every time the form changes
+-Makes sense for the forms to display whatever changes are made via user
+-React sets up an event listener for this purpose
+eg:
+<input type='text' id='firstName' onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
+<input type='text' id='lastName' onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
+
+-onChange fires every time a value of input changes
+-An anonymous function invoked, accepting event as its argument, then calls this.handleWhatever,
+ then passing the event as an agrument
 
 
 -For elements include: <input>, <textarea>, <select>, <form>, not always specifically <input>
