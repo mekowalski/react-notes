@@ -1,4 +1,7 @@
-Order of lifecycle methods goes:
+-React Components get created and destroyed only once
+-The majority of their lifetime is spent updating(reacting to user interactions)
+
+Order of 4 lifecycle methods to handle updates and render():
   1. componentWillReceiveProps(nextProps)
   2. shouldComponentUpdate(nextProps, nextState)
   3. componentWillUpdate(nextProps, nextState)
