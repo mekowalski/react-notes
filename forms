@@ -1,5 +1,9 @@
-Forms in React are straight forward and similar to regular HTML elements with some differences
-For elements include: <input>, <textarea>, <select>, <form>, not always specifically <input>
+CONTROLLING FORM VALUES FROM STATE
+-Forms in React are straight forward and similar to regular HTML elements with some differences
+-Though storing and handling form data is entirely new
+-Controlled forms: form deriving its input values from state (good practice)
+
+-For elements include: <input>, <textarea>, <select>, <form>, not always specifically <input>
 Use specific prop to control value of inputs:
   -<input> & <textarea> use 'value'
   -<input type='checkbox'> & <input type='radio'> use 'checked'
