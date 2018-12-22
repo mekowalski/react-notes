@@ -39,11 +39,14 @@ shouldComponentUpdate(nextProps, nextState) {
 LIFECYCLE 3
 -Called immediately after the check in of Lifecycle 2 has passed
 -No state changes allowed and solely used for preparing for upcoming update, not trigger one
+-Common use to call an action, set variable or start an animation, based on state changes
+componentWillUpdate(nextProps, nextState)
 EXAMPLE: theater needs different background, new costumes or more upbeat music, etc
 
 
 LIFECYCLE 4
 -render() is most familiar method for React developers
+-Often timesm React components will be written only using render() method
 -The next props and state are available via this.props/state and gets rendered into the DOM
 EXAMPLE: the play is finally carried out, not changes are made, takes director-approved script and
 makes it happen for show time
