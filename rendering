@@ -61,3 +61,7 @@ componentDidUpdate(prevProps, prevState) {
     someChartLibrary.updateHeight(this.props.height)
   }
 }
+
+-These lifecycles help decide changes in component
+-render() method is the ONLY one that is NEEDED, everything else is optional
+-Ideally, best to have as little of these methods as possible in application
