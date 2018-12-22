@@ -19,6 +19,12 @@ in the app
 -A React component must be valid with 'render()'
 -Lifecycle methods are called at different times of the component's lifecycle
 
+PRE-MOUNTING
+-Components at the core are simply JS classes
+-Before Mounting begins, the class's constructor function is called
+-Constructor isn't related to mounting to the DOM but it's useful for creating initial state
+ for a component
+
 
 MOUNTING
 -When a component is initially created, it figures out its initial state and renders its initial
