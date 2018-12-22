@@ -89,10 +89,29 @@ eg:
 <form onSubmit={ event => this.handleSubmit(event) }>
   ...code
 </form>
-*alldata from an uncontrolled form is accessible via EVENT but can sometimes be a pain to access
-
+*all data from an uncontrolled form is accessible via EVENT but can sometimes be a pain to access
 
 
 CONTROLLED COMPONENT
 -Controlled components explicitly set value of a component and update value in response to changes
 *code along with react-forms-v*
+-Define initial value by setting VALUE property on the state to whatever desired
+-When something is entered into the INPUT, the VALUE is captured and set as new state
+-Working on a submitted form becomes cleaner
+eg:
+handleSubmit = event => {
+  event.preventDefault()
+  this.sendFormDataSomewhere(this.state)
+}
+*The entire state object is under this controlled form data
+*This handleSubmit doesn't change even with multiple controlled inputs
+ eg: inputs for: name, age, faveColor, city, birthdate, pets, etc
+
+
+ ABSTRACTING BOTH ANON FUNCTIONS
+ handleChange = event => {
+  this.setState({
+    [event.target.name]: event.target.value
+  })
+ }
+ *When connected to input(s), both will correctly update state to its respective attribute
