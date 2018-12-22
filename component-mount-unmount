@@ -39,6 +39,9 @@ EXAMPLE: keep the time and date when component was created, set up in 'component
   componentWillMount() {
     this.setState({startDateTime: new Date(Date.now())})
   }
+*Largely considered problematic and may soon be deprecated
+-Preferable to use Constructor for setting an initial state for component
+-Preferable to user componentDidMount for setting state using data from async request
 
 
 COMPONENTDIDMOUNT
