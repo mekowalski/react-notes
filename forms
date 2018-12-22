@@ -78,10 +78,19 @@ CONTROLLED VS UNCONTROLLED COMPONENTS
 
 
 UNCONTROLLED COMPONENT
--Uncontrolled component's values are kept in the DOM itself, the form element has its own internal
-state
+-Uncontrolled component's values are kept in the DOM itself, the form element has its own
+ internal state
+eg: <input> has its own internal state
+
 -Use defaultValue prop to set initial value for element, can't use 'value' prop
 -Not using state to explicitly store its value, component never update its value
+-Submit form by using onSubmit handler on form element
+eg:
+<form onSubmit={ event => this.handleSubmit(event) }>
+  ...code
+</form>
+*alldata from an uncontrolled form is accessible via EVENT but can sometimes be a pain to access
+
 
 
 CONTROLLED COMPONENT
