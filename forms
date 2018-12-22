@@ -71,7 +71,10 @@ CONTROLLED VS UNCONTROLLED COMPONENTS
 -Check for 'value' or 'defaultValue' to check if component is controlled or uncontrolled:
   -value prop is controlled by React
   -no value prop means uncontrolled component
-  -value and defaltValue are mutually exclusive, one or the other but cannot be both
+  -value and defaultValue are mutually exclusive, one or the other but cannot be both
+  eg:
+    Controlled value: faveColor: 'Yellow'
+    Uncontrolled defaultValue: threeCount: default: 3 (example for function to increment upward by 3, starting count value at 3, 3 then 6 then 9, etc)
 
 
 UNCONTROLLED COMPONENT
