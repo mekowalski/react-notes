@@ -37,6 +37,10 @@ DISADVANTAGES OF THIS IMPLEMENTATION
 -assumes call to api returns JSON object containing list of book objects with certain properties
 -assumes book list will always be rendered with same markup returned by render function
 
+-Data returned from API could change at some point
+-Errors would arise
+-This code isn't reusable if it needed to be used elsehwere in the app
+
 
 SEPARATING CONCERNS WITH CONTAINER COMPONENT
 -Compose UI out of multiple React components to isolate UI layer into presentational components
