@@ -54,10 +54,35 @@ MINIMIZE STATE WITH PROPS
 -Comp will know how to render a list of fruits
 -This comp will then receive that list as a PROP!!!!!!
 eg:
-const FruitLists = props =>
+const FruitList = props =>
   <ul>
     {props.fruitlist.map((fruit) => {
       return <li key={fruit}>{fruit}</li>
     })}
   </ul>
-*Much simple are more stable
+*Much simpler and more stable
+
+-FruitList's parent (App for now) will be able to handle state of which fruits to display
+eg:
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showEaten: false,
+      fruits: []
+    }
+  }
+
+  componentDidMount() {
+    this.updateFruitList()
+  }
+
+  toggleListMode = () => this.setState({
+    showEaten: !this.state.showEaten
+  })
+
+  updateFruitList = () => {
+    fetch('/api/fruit?eaten=')
+  }
+}
