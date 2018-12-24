@@ -49,3 +49,15 @@ class FruitEaten extends Component {
 *Already too much state in a small app here
 
 MINIMIZE STATE WITH PROPS
+-Both components (FruitNotEaten & FrutiEaten) are lists
+-Both can be considered as one simple presentational component called FruitList
+-Comp will know how to render a list of fruits
+-This comp will then receive that list as a PROP!!!!!!
+eg:
+const FruitLists = props =>
+  <ul>
+    {props.fruitlist.map((fruit) => {
+      return <li key={fruit}>{fruit}</li>
+    })}
+  </ul>
+*Much simple are more stable
