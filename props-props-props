@@ -83,6 +83,20 @@ class App extends Component {
   })
 
   updateFruitList = () => {
-    fetch('/api/fruit?eaten=')
+    fetch('/api/fruit?eaten=${this.state.showEaten}')
+      .then(response => response.json)
+      .then(fruits => this.setState({ fruits }))
+  }
+
+  render() {
+    render <FruitList fruitList={this.state.fruits} />
   }
 }
+*Set up the same fetch mechanism for a list of fruit from backend
+*There is a bit more logic to switch app's mode for App comp to fetch appropriate list but then  send
+ that list into FruitList comp to be rendered
+
+-Because of using PROPS to send data downward, this allowed simplification of app's implementation,
+ reduced 2 comps into 1
+-Able to remove all complex state logic once maintained in FruitsEaten & FruitsNotEaten comps
+-Only the parent comp(App) needs to be smart and take care of STATE
