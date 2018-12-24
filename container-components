@@ -56,6 +56,11 @@ const Book = ({ title, img_url }) => {
 }
 
 //stateless & contains presentation layer, incredibly stable & concise
+//BookList is a now easily reusable component
+//Could possibly write another container component, FaveBookListContainer, then import and wrap BookList
+  to build different UI piece with same code
+//If future developers needed to redesign the way book lists display, only the BookList Comp needs to be
+  modified
 const BookList = ({books}) => (
   <div className="book-list">
     {books.map(book => <Book title="book.title" img_url="book.image_url" />)}
