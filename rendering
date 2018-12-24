@@ -46,7 +46,7 @@ EXAMPLE: theater needs different background, new costumes or more upbeat music, 
 
 LIFECYCLE 4
 -render() is most familiar method for React developers
--Often timesm React components will be written only using render() method
+-Often times React components will be written only using render() method
 -The next props and state are available via this.props/state and gets rendered into the DOM
 EXAMPLE: the play is finally carried out, not changes are made, takes director-approved script and
 makes it happen for show time
