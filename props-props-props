@@ -8,4 +8,36 @@ PROPS ARE GOOD BECAUSE...
 -Often, an application needs state but the human brain struggled ti parse and track state
 
 PROPS: provide a way to minmize  number of components in app that carry and manage state
--Aloso provides a method to reduce the total 'surface area' of the app that is 'stateful'
+-Also provides a method to reduce the total 'surface area' of the app that is 'stateful'
+-Props are used to send down DATA, therefore pushing up STATE up, making STATE at the top of UI's
+ hierarchy
+
+
+USE-CASE PUSHING STATE UPWARDS
+-Simple Fruit Basket app that tracks what's in the fruit basket and what's been eaten
+-Two comps: FruitNotEaten & FruitEaten, each responsible for fetching its own list from app's backend
+eg:
+class FruitEaten extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      fruitList: []
+    }
+  }
+
+  componentDidMount() {
+    //Assume fetch function is a PROMISE that can go over the internet
+    fetch('/api/fruit?eaten=true')
+      .then(response => response.json())
+      .then(fruitList => this.setState({ fruitList})
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.fruitList.map(fruit => <li key={fruit}>{fruit}</li>)}
+      </ul>
+    )
+  }
+}
