@@ -41,3 +41,11 @@ class FruitEaten extends Component {
     )
   }
 }
+*This comp fetches a list of already eaten fruit
+*Then renders that list
+*Main con is that this is only one implemented component
+*FruitNotEaten comp still needs to be created to fetch and update its state
+*THIS IS NOT DRY
+*Already too much state in a small app here
+
+MINIMIZE STATE WITH PROPS
