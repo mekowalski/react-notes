@@ -1,0 +1,11 @@
+PROPS ARE GOOD BECAUSE...
+-State is bad(Somewhat, not really)
+-Using state in React comps is necessary at times
+-State has the ability to explicitly/reliably update component's features making it a powerful React
+ feature
+-Overall state creates complexity
+
+-Often, an application needs state but the human brain struggled ti parse and track state
+
+PROPS: provide a way to minmize  number of components in app that carry and manage state
+-Aloso provides a method to reduce the total 'surface area' of the app that is 'stateful'
