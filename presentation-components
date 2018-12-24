@@ -55,7 +55,7 @@ onChange callback, interactivity through the addition of callbacks*
 STATELESS FUNCTIONAL COMPONENT & PURE FUNCTIONS
 -Presentational components can be even simpler
 -If a component has no state then is doesn't need to be JavaScript object type Component
--It can be a simple function
+-It can be a simple function, taking an input and returning a portion of the UI
 EXAMPLE: TextField component
 const defaultLimit = 100
 
