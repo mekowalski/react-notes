@@ -6,11 +6,11 @@ Presentation component primarily renders the interface developers build, to make
 -More so a convention/programming pattern used for React UI's
 
 PRESENTATIONAL COMPONENT FEATURES
--primarily concerned with how it looks
--probably only contain a render method
--don't know how to load or alter data that is rendered
--rarely have changeable state properties
--best written as stateless functional components
+-Primarily concerned with how it looks
+-If they're class comps, they probably only contain a render method. If functional, they return some JSX
+-Don't know how to load or alter data that is rendered
+-Rarely have changeable state properties
+-Best written as stateless functional components
 
 
 I HAVE BEEN WRITING PRESENTATIONAL COMPONENTS!!!!!!
