@@ -44,6 +44,8 @@ class TextField extends Component {
 }
 *simple presentational component yet very powerful, establishes simple API for all text fields with
 onChange callback, interactivity through the addition of callbacks*
+*This simple wrapper establishes CSS classes used in one place for every single input throughout app
+*Easily capable of changing all <input> later if necessary
 
 -Can define more unique and customized modules that are primarily presentational
 -All almost stateless and receive props from parent to render
