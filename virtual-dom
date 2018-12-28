@@ -5,6 +5,14 @@
 -Developers can think to have a document look like this and the VDOM will do the heavy lifting
 -Virtual DOM does most of the work for the code, don't need to write much imperative code to update the
 application
--Able to simplay declare what the component should look like and how it should behave
+-Able to simply declare what the component should look like and how it should behave
 -VDOM works very well and is used in many high-profile libraries and frameworks
 -It is just a clever work around to the DOM being slow and the best bet for now
+
+eg: index.js
+ReactDOM.render(
+  <App />
+)
+
+App.js
+-Imports other Components that is all encompassed here
