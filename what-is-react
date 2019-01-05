@@ -50,3 +50,8 @@ INTERACTIVE COMPONENT
 -It fires only after a click
 -Forgetting () => and writing onClick={alert('clicked')} is a common mistake that leads to the alert firing
  every time the COMPONENT re-renders
+
+STATE
+-For a COMPONENT to 'remember' the current execution, it uses STATE
+-React COMPONENTS have STATE by setting this.state in their constructors, should only be considered private
+ to a React COMPONENT it's defined within
