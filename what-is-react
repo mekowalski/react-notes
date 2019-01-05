@@ -43,3 +43,10 @@ class ShoppingList extends React.Component {
 PASSING DATA THROUGH PROPS
 -Pass a prop from a Parent COMPONENT to a Child COMPONENT with {this.props.value}
 -This is how information flows in React apps
+
+INTERACTIVE COMPONENT
+-onClick with and arrow function syntax to avoid confusion of THIS
+-onClick={() => alert('clicked')} passes a FUNCTION as the onClick PROP
+-It fires only after a click
+-Forgetting () => and writing onClick={alert('clicked')} is a common mistake that leads to the alert firing
+ every time the COMPONENT re-renders
