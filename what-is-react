@@ -18,3 +18,19 @@ class ShoppingList extends React.Component {
     )
   }
 }
+*ShoppingList is a React COMPONENT Class or React COMPONENT type
+
+-Use COMPONENTS to tell React what to display on the screen
+-When data changes, React will update and re-render COMPONENTS
+-COMPONENT takes in params called PROPS(properties) and returns a hierarchy of vies to display via RENDER()
+ method
+-RENDER() method returns description of what to see on screen, returning a React element
+-JSX makes structures easier to write
+  eg:
+  <div /> syntax transformed at build time to React.createElement('div')
+
+  EQUIVALENT:
+  return React.createElement('div', {classnName: 'shopping-list'},
+    React.createElement('h1', //h1 children),
+    React.createElement('ul', //ul children)
+  )
