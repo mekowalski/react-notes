@@ -1,3 +1,20 @@
 REACT: Declarative, efficient and flexible JS library for building user interfaces(UI)
 -Allows creation of complex UIs from small, isolated pieces of code called COMPONENTS
 -React has many kinds of COMPONENTS
+
+REACT.COMPONENT Subclass
+eg:
+class ShoppingList extends React.Component {
+  render() {
+    return(
+      <div className='shopping-list'>
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Groceries</li>
+          <li>Shoes</li>
+          <li>Bedding</li>
+        </ul>
+      </div>
+    )
+  }
+}
