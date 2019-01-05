@@ -39,3 +39,7 @@ class ShoppingList extends React.Component {
 -Each React element is a JS object that can be stored in a variable or passed around in the program
 -Each React COMPONENT is encapsulated and can operate independently, allowing build of complex UIs from
  simple COMPONENTS
+
+PASSING DATA THROUGH PROPS
+-Pass a prop from a Parent COMPONENT to a Child COMPONENT with {this.props.value}
+-This is how information flows in React apps
