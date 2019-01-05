@@ -34,3 +34,8 @@ class ShoppingList extends React.Component {
     React.createElement('h1', //h1 children),
     React.createElement('ul', //ul children)
   )
+
+-JSX comes with full power JavaScript, any JS expressions can by put within braces inside JSX
+-Each React element is a JS object that can be stored in a variable or passed around in the program
+-Each React COMPONENT is encapsulated and can operate independently, allowing build of complex UIs from
+ simple COMPONENTS
