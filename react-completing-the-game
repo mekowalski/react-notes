@@ -20,3 +20,14 @@ LIFTING STATE UP
   'X', 'X', 'O',
   'O', NULL, NULL
 ]
+
+-Current Board renderSquare():
+renderSquare(i) {
+  return <Square value={i}/>;
+}
+*Beginning, value props passed down from Board to show numbers 0-8 in every Square
+*Another previous step, numbers were replaces with an 'X' mark determined by the Square's own state
+*Square currently ignores the value prop passed to it by Board
+
+-Need to use prop passing mechanism again
+-Modify Board to instruct each individual Square about its current value('X', 'O' or null)
