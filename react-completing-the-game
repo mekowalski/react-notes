@@ -39,3 +39,20 @@ renderSquare(i) {
 -State is private therefore Board cannot update directly from Square
 -Maintain Board's state privacy with a passed down function from Board to Square
 -This function will get called when Square is clicked
+
+Current Board's renderSquare()
+eg:
+renderSquare(i) {
+  return (
+    <Square
+      value={this.state.squares[i]}
+      onClick={() => this.handleClick(i)}
+    />
+  );
+}
+*Pass down 2 props from Board to Square: value and onClick
+*onClick is a function that Square can call when clicked
+*Makes the following changed to Square
+  -Replace this.state.value with this.props.value in Square's render() method
+  -Replace this.setState() with this.props.onClick() in Square's render() method
+  -Delete constructor from Square because Square no longer keeps track of Game's state
