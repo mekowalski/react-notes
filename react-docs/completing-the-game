@@ -74,4 +74,11 @@ class Square extends React.Component {
 2. When button is clicked, React will call onClick handler defined in Square's render() method
 3. Event handler calls this.props.onCLick(), specified by Board
 4. Board passed onClick={() => this.handleClick(i)} to Square, the Square calls this.handleClick(i)
-5. Currently handleClick() isn't defined, therefore current code crashes 
+5. Currently handleClick() isn't defined, therefore current code crashes
+
+
+*DOM <button> element's onClick attribute has special meaning to React because it's built-in
+*For custom components, naming is to coder's liking
+*Square's onCLick or Board's handleClick can be named differently
+*However, in React convention to use on(Event) names for props representing events and handle(Event) for
+ methods handling events
