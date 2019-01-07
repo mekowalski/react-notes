@@ -65,3 +65,7 @@ eg: Square Component render()
   onClick={() => this.setState({value: 'X'})}>
   {this.state.value}
 </button>
+*this.setState from onCLick handler in render() method, React re-renders that Square when its <button> is
+ clicked
+*After update, Square's this.state.value will be 'X' therefore X will be on the gameboard
+*Calling setState in a Component, React automatically updates child Components inside also
