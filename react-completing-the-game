@@ -31,3 +31,11 @@ renderSquare(i) {
 
 -Need to use prop passing mechanism again
 -Modify Board to instruct each individual Square about its current value('X', 'O' or null)
+
+(Right now all the squares just get X marked inside them)
+-Need to change what happens when a Square is clicked
+-Board will now maintain which squares are filled
+-Need to create a way for Square to update the Board's state
+-State is private therefore Board cannot update directly from Square
+-Maintain Board's state privacy with a passed down function from Board to Square
+-This function will get called when Square is clicked
