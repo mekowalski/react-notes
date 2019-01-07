@@ -1,0 +1,7 @@
+COMPLETING THE GAME
+(Follow up from what-is-react and the TTT game)
+
+LIFTING STATE UP
+-To check for a winner, maintain the value of each 9 squares in one location
+-Best approach is to store the Game's state in the Parent Board Component
+-Board will be able to tell each Square what to display by passing a PROP
