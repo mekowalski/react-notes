@@ -56,3 +56,22 @@ renderSquare(i) {
   -Replace this.state.value with this.props.value in Square's render() method
   -Replace this.setState() with this.props.onClick() in Square's render() method
   -Delete constructor from Square because Square no longer keeps track of Game's state
+
+
+SQUARE COMPONENT(current)
+class Square extends React.Component {
+  render() {
+    return (
+      <button
+        className="square"
+        onClick={() => this.props.onClick()}>
+        {this.props.value}
+      </button>
+    );
+  }
+}
+1. onCLick prop on built-in DOM <button> component tells React to set up a click event listener
+2. When button is clicked, React will call onClick handler defined in Square's render() method
+3. Event handler calls this.props.onCLick(), specified by Board
+4. Board passed onClick={() => this.handleClick(i)} to Square, the Square calls this.handleClick(i)
+5. Currently handleClick() isn't defined, therefore current code crashes 
