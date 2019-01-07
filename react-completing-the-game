@@ -10,3 +10,13 @@ LIFTING STATE UP
 -Do this by declaring the Shared STATE in their Parent Component
 -Parent Component can pass STATE back down to Children by using PROPS
 -Doing so will keep Child Components in sync with each other and Parent Component
+
+-Add constructor to Parent Component to set initial state
+*Follow with react-ttt-app
+-When filling the board later, it will look something like:
+
+[
+  'O', NULL, 'X',
+  'X', 'X', 'O',
+  'O', NULL, NULL
+]
