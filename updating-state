@@ -130,3 +130,13 @@ STATE CHANGES VS PROPS CHANGES
 -State and Props changes will BOTH trigger re-render in React component
 -State changes though, will only happen INTERNALLY due to components changing their own state
 -Props changes occur eternally due to changes in the prop values being passed in
+
+
+WHAT DOES SETSTATE DO?
+-setState schedules an update to a component's state object, when state changes, the component re-renders
+
+STATE VS PROPS
+-Both are plain JavaScript objects
+-Both hold information that influences the output of render
+-Props get passed TO the component(similar to function params)
+-State is managed WITHIN the component(similar to variables declared within a function)
