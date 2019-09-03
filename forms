@@ -68,6 +68,13 @@ eg:
 
 MORE ON FORMS
 -For elements include: <input>, <textarea>, <select>, <form>, not always specifically <input>
+-Elements above, typically maintain their own state and update based on user input
+-Mutable state is typically kept in state property of components and ONLY updated with setState()
+-When combined, the React component rendering the form also controls what happens in the form on
+ subsequent user input
+-Input form element whose value is controlled by React is called a controlled component
+-With controlled component, every state mutation will have association with handler function
+
 Use specific prop to control value of inputs:
   -<input> & <textarea> use 'value'
   -<input type='checkbox'> & <input type='radio'> use 'checked'
