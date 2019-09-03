@@ -134,9 +134,20 @@ STATE CHANGES VS PROPS CHANGES
 
 WHAT DOES SETSTATE DO?
 -setState schedules an update to a component's state object, when state changes, the component re-renders
+-setState is asynchronous inside event handlers
 
 STATE VS PROPS
 -Both are plain JavaScript objects
 -Both hold information that influences the output of render
 -Props get passed TO the component(similar to function params)
 -State is managed WITHIN the component(similar to variables declared within a function)
+
+HOW TO UPDATE STATE VALUES DEPENDENT ON CURRENT STATE
+-Pass function instead of an object to setState to ensure the call always uses the most updated version
+ of state
+
+WHY DOESN'T REACT UPDATE THIS.STATE SYNCHRONOUSLY?
+-React purposefully waits until all components call setState() in handlers before re-render
+-Two main reasons React doesn't just update this.state immediately without re-render
+  1. Consistency between props and state would break, causing issues that are difficult to debug
+  2. Some new features being worked on would be impossible to implement
