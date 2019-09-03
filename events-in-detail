@@ -21,3 +21,7 @@ cleaned up for later use
 -If accessing data is necessary then either:
   1. Store the data in a variable 'const target = event.target'
   2. Make the event persistent with 'event.persist()'
+
+-The SyntheticEvent object will be reused and all properties will be revoked after event callback has
+ been invoked
+-Performance reason, cannot then access event in asynchronous way
