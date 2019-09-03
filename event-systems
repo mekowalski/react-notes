@@ -38,3 +38,9 @@ class Tickler extends React.Component {
 
 -Passing a function reference, not executing the tickle function
 -L11: NOT required, all methods in React component always use THIS one way or another
+
+-With React, it is typically needed to bind the methods passed to other components
+  eg: L34 passes `this.tickle` therefore bind it
+
+-It is unnecessary however, to bind render() or lifecycle methods because those are NOT passed to
+ other components
