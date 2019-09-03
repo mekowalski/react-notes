@@ -28,8 +28,18 @@ UPDATING STATE VIA FORMS
 -Makes sense for the forms to display whatever changes are made via user
 -React sets up an event listener for this purpose
 eg:
-<input type='text' id='firstName' onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
-<input type='text' id='lastName' onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
+  <input
+    type='text'
+    id='firstName'
+    onChange={event => this.handleFirstNameChange(event)}
+    value={this.state.firstName}
+  />
+  <input
+    type='text'
+    id='lastName'
+    onChange={event => this.handleLastNameChange(event)}
+    value={this.state.lastName}
+  />
 
 -onChange fires every time a value of input changes
 -An anonymous function invoked, accepting event as its argument, then calls this.handleWhatever,
