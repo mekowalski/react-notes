@@ -54,3 +54,9 @@ BIG OAK TREE
 -Each branch is a child component
 -The leaves of each branch are more children
 -Leaves go through lifecycles of creation, changing colors based on seasons and finally falling
+
+
+COMMONLY USED LIFECYCLE METHODS
+-render(): ONLY required method in a class component
+-Should be pure, doesn't modify component state, returns the same result each time it's invoked and doesn't
+ directly interact with browser
