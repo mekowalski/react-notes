@@ -60,3 +60,11 @@ COMMONLY USED LIFECYCLE METHODS
 -render(): ONLY required method in a class component
 -Should be pure, doesn't modify component state, returns the same result each time it's invoked and doesn't
  directly interact with browser
+-If browser needs to be interacted with, do so in componentDidMount(), this keeps render() pure
+
+-constructor(): React.Component subclass, that is called before being mounted
+-Used for one, initialling state by assigning an object to this.state
+-Also used to bind event handler methods to an instance
+-Do no call setState() in constructor(), instead assign initial state to this.state directly in constructor
+-All other methods will use this.setState to update state
+-Avoid the common mistake of: copying props in to state
