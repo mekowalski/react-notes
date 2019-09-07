@@ -22,11 +22,24 @@ eg:
     }
   }
 
+  ***In ES7, it is possible to initialize state with simply the syntax below.  Both the syntaxes above and
+  below will complete the same task***
   state = {
     key: 'value'
   }
-*SUPER is called to execute constructor function inherite from React.Component while adding
+*SUPER is called to execute constructor function inherited from React.Component while adding
  functionality
+
+-It is possible to user constructor to set initial state dependent on Props
+eg:
+  constructor(props) {
+    super(props)
+    this.state = {
+      color: props.initialColor
+    }
+  }
+***This takes in props as an argument to constructor.  The use of props is to set the initial state.
+If props are used to do this, then props don't need to be included as a constructor argument***
 
 
 MOUNTING
