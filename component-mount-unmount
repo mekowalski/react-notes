@@ -66,6 +66,15 @@ every 15 seconds without page refresh
     this.interval = setInterval(this.fetchWeather, 15000)
   }
 
+ORDER OF OPERATIONS WHEN A COMPONENT INSTANCE IS BEING CREATED AND INSERTED INTO DOM
+1. constructor()
+  -If state isn't initialized and methods aren't bind-ed, a constructor isn't needed
+2. render()
+3. componentDidMount()
+  -Invoked immediately after component is mounted
+  -Initialization that requires DOM nodes should go here
+  -If loading data is needed from remote endpoint, this is a good place to begin network request
+
 
 UNMOUNTING
 Only one lifecycle method to delete or cleanup: componentWillUnmount
