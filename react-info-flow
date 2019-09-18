@@ -17,3 +17,12 @@ EXAMPLE: Simple app rendering 3 components(CompYellow, CompGreen and CompWhite)
           |___CompGreen
                  |___CompWhite
                  |___CompWhite
+
+src/randomColorGenerator.js has a few helper functions to help generate random colors
+
+
+DELIVERABLES
+-Understanding how React components should communicate up and down a component tree
+1. When a component is clicked, all other components within same parent should make same actions
+2. When a component changes an attribute, all its children should follow a similar action
+3. Components of same level won't communicate directly
