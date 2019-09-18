@@ -1,0 +1,19 @@
+EXAMPLE: Simple app rendering 3 components(CompYellow, CompGreen and CompWhite)
+-When Fully rendered, component structure should look like:
+  APP
+   |___CompYellow
+   |      |___CompGreen
+   |      |      |___CompWhite
+   |      |      |___CompWhite
+   |      |
+   |      |___CompGreen
+   |             |___CompWhite
+   |             |___CompWhite
+   |___CompYellow
+          |___CompGreen
+          |      |___CompWhite
+          |      |___CompWhite
+          |
+          |___CompGreen
+                 |___CompWhite
+                 |___CompWhite
