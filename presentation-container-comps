@@ -1,2 +1,9 @@
 Separation of Presentational and Container Components help make application easier to understand
 Also allows easy reuse of components
+
+                  PRESENTATIONAL      | CONTAINER
+       Purpose  |
+Aware of Redux  |
+  To read data  |
+To change data  |
+   Are written  |
